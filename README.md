@@ -1,4 +1,10 @@
-# AngularSmallLab
+# 🅰️Angular🌱Small🧫Lab
+
+### 🏝️ Full Standalone demo
+
+### 🗺️ Lazy loaded route components
+
+### 🚫 No modules at all
 
 ## Steps to reproduce
 

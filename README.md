@@ -1,5 +1,7 @@
 # 🅰️Angular🌱Small🧫Lab
 
+## Laboratory for small Angular applications
+
 ### 🏝️ Full Standalone demo
 
 ### 🗺️ Lazy loaded route components

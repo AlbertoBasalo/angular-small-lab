@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  padding: 1rem;
+}
+:root {
+  --form-element-spacing-vertical: 0.25rem;
+  --form-element-spacing-horizontal: 0.25rem;
+}
+span {
+  display: inline-block;
+  margin-right: 0.5rem;
+}

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { LinkComponent } from 'src/app/ui/link/link.component';
+import { LinkComponent } from 'src/app/ui/components/link.component';
 
 @Component({
   selector: 'lab-about',

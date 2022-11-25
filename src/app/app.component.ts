@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { LinkComponent } from './ui/link/link.component';
+import { LinkComponent } from './ui/components/link.component';
 
 @Component({
   selector: 'lab-root',
@@ -9,11 +9,15 @@ import { LinkComponent } from './ui/link/link.component';
   imports: [CommonModule, RouterOutlet, RouterLink, LinkComponent],
   template: `
     <header>
-      <a routerLink="/">
-        {{ title }}
-      </a>
       <nav>
-        <a routerLink="/about">About us</a>
+        <ul>
+          <strong>
+            <a routerLink="/"> {{ title }} </a>
+          </strong>
+        </ul>
+        <ul>
+          <a routerLink="/about">About us</a>
+        </ul>
       </nav>
     </header>
     <router-outlet></router-outlet>
@@ -26,6 +30,6 @@ import { LinkComponent } from './ui/link/link.component';
   styles: [],
 })
 export class AppComponent {
-  title = 'angular-small-lab';
+  title = '🅰️ 🌱 🧫 angular-small-lab';
   repoUrl = 'https://github.com/AlbertoBasalo/angular-small-lab';
 }

@@ -1,10 +1,21 @@
 # AngularSmallLab
 
-```
+## Steps to reproduce
+
+```bash
 ng new angular-small-lab -p=lab -S -s -t
 ng g c routes/home --type=page --skip-selector
 ng g c routes/about --type=page --skip-selector
-ng g c ui/link
+ng g c ui/components/link --flat
+# CSS optional framework
+npm install @picocss/pico
+```
+
+## Steps to run
+
+```bash
+npm i
+npm start
 ```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.

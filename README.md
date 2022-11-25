@@ -1,5 +1,12 @@
 # AngularSmallLab
 
+```
+ng new angular-small-lab -p=lab -S -s -t
+ng g c routes/home --type=page --skip-selector
+ng g c routes/about --type=page --skip-selector
+ng g c ui/link
+```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
 ## Development server

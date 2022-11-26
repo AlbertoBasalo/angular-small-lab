@@ -1,10 +1,10 @@
 # 🅰️Angular🌱Small🧫Lab
 
-A set of laboratories for different applications sizes and lasting expectations.
+Par of a set of laboratories for different applications sizes and lasting expectations.
 
 ## 🌱 Laboratory for _small_ Angular applications
 
-> this repository, with minimal complexity
+> [this repository](https://github.com/AlbertoBasalo/angular-small-lab) featuring:
 
 ### 🏝️ Full Standalone APIs ✅
 
@@ -41,7 +41,7 @@ npm start
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
-[See detailed instructions on CLI.md](docs/CLI.md)
+### [See detailed instructions on CLI.md](docs/CLI.md)
 
 ---
 

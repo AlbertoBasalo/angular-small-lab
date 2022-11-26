@@ -1,6 +1,6 @@
 # 🅰️Angular🌱Small🧫Lab
 
-Par of a set of laboratories for different applications sizes and lasting expectations.
+First part of a suite of labs for applications of varying sizes and enduring expectations.
 
 ## 🌱 Laboratory for _small_ Angular applications
 
@@ -12,11 +12,13 @@ Par of a set of laboratories for different applications sizes and lasting expect
 
 ### 📺 Container (page) - Presenters (form, table...) ✅
 
+### 🧪 E2E Testing ❌
+
 ## 🪴 Laboratory for _medium_ Angular applications
 
 > repository coming soon, with all the features of _small_ plus...
 
-### 🧪 Unit and e2e Tests ❌
+### 🔬 Unit Testing ❌
 
 ### ♻️ On Push change detection ❌
 

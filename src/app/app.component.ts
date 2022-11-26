@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { LinkComponent } from './ui/components/link.component';
 
 @Component({
   selector: 'lab-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LinkComponent],
   template: `
     <header>
       <a> {{ title }} </a>
@@ -25,7 +26,8 @@ import { Component } from '@angular/core';
     </article>
     <footer>
       <a [href]="repoUrl" target="_blank">Repository code on GitHub </a>
-      ©️ {{ year }} by <a [href]="authorUrl" target="_blank"> {{ author }} </a>
+      ©️ {{ year }} by
+      <lab-link caption="Repository code on GitHub" [href]="repoUrl"></lab-link>
     </footer>
   `,
 })

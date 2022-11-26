@@ -16,14 +16,18 @@ import { LinkComponent } from './ui/components/link.component';
           </strong>
         </ul>
         <ul>
-          <a routerLink="/about">About us</a>
+          <a routerLink="/about">ℹ️ About us</a>
         </ul>
       </nav>
     </header>
     <router-outlet></router-outlet>
     <footer>
       <p>
-        <lab-link caption="Repository" [href]="repoUrl"></lab-link>
+        ©️ {{ year }}
+        <lab-link
+          caption="Repository code on GitHub"
+          [href]="repoUrl"
+        ></lab-link>
       </p>
     </footer>
   `,
@@ -32,4 +36,5 @@ import { LinkComponent } from './ui/components/link.component';
 export class AppComponent {
   title = '🅰️ 🌱 🧫 angular-small-lab';
   repoUrl = 'https://github.com/AlbertoBasalo/angular-small-lab';
+  year = new Date().getFullYear();
 }

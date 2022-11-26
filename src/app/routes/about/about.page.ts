@@ -7,26 +7,33 @@ import { LinkComponent } from 'src/app/ui/components/link.component';
   standalone: true,
   imports: [CommonModule, LinkComponent],
   template: `
-    <h3>Created by {{ contact.name }}</h3>
-    <ul>
-      <li>
-        <lab-link [href]="contact.twitter" caption="Twitter"></lab-link>
-      </li>
-      <li>
-        <lab-link [href]="contact.linkedIn" caption="LinkedIn"></lab-link>
-      </li>
-      <li>
-        <lab-link [href]="contact.github" caption="GitHub"></lab-link>
-      </li>
-      <li>
-        <lab-link [href]="contact.www" caption="Site"></lab-link>
-      </li>
-    </ul>
+    <article>
+      <header>
+        <h4>A suite of labs for applications of any size with Angular</h4>
+        <h3>
+          Developed by
+          <lab-link [href]="author.www" [caption]="author.name"></lab-link>
+        </h3>
+      </header>
+      <main>
+        <ul>
+          <li>
+            <lab-link [href]="author.twitter" caption="Twitter"></lab-link>
+          </li>
+          <li>
+            <lab-link [href]="author.linkedIn" caption="LinkedIn"></lab-link>
+          </li>
+          <li>
+            <lab-link [href]="author.github" caption="GitHub"></lab-link>
+          </li>
+        </ul>
+      </main>
+    </article>
   `,
   styles: [],
 })
 export default class AboutPage {
-  contact: any = {
+  author: any = {
     name: 'Alberto Basalo',
     www: 'https://www.albertobasalo.dev',
     github: 'https://github.com/albertobasalo',

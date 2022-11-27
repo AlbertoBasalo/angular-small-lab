@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-
 @Component({
   selector: 'lab-link',
   standalone: true,

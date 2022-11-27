@@ -11,9 +11,9 @@ import { LinkComponent } from './ui/components/link.component';
     <header>
       <nav>
         <ul>
-          <strong>
-            <a routerLink="/"> {{ title }} </a>
-          </strong>
+          <strong
+            ><a routerLink="/"> {{ title }} </a></strong
+          >
         </ul>
         <ul>
           <a routerLink="/about">ℹ️ About us</a>
@@ -31,7 +31,6 @@ import { LinkComponent } from './ui/components/link.component';
       </p>
     </footer>
   `,
-  styles: [],
 })
 export class AppComponent {
   title = '🅰️ 🌱 🧫 angular-small-lab';

@@ -4,7 +4,6 @@ import { LinkComponent } from 'src/app/ui/components/link.component';
 import { AboutService } from './about.service';
 
 @Component({
-  selector: 'lab-about',
   standalone: true,
   imports: [CommonModule, LinkComponent],
   providers: [{ provide: AboutService, useValue: new AboutService() }],

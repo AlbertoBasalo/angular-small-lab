@@ -33,3 +33,13 @@ ng g c routes/about--type=page --skip-selector
 # Add the lazy imported component to app.routes.ts file
 # Add router links on app.component.ts
 ```
+
+## 5️⃣ Add a service
+
+```bash
+# declare any model you need
+ng g i routes/about/author --type=interface
+# create local services
+ng g s routes/about/about
+# provide and inject the service on the component
+```

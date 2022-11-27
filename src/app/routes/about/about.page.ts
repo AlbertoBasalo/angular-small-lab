@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LinkComponent } from 'src/app/ui/components/link.component';
+import { AboutService } from './about.service';
 
 @Component({
   selector: 'lab-about',
   standalone: true,
   imports: [CommonModule, LinkComponent],
+  providers: [{ provide: AboutService, useValue: new AboutService() }],
   template: `
     <article>
       <header>
@@ -23,21 +25,12 @@ import { LinkComponent } from 'src/app/ui/components/link.component';
           <li>
             <lab-link [href]="author.linkedIn" caption="LinkedIn"></lab-link>
           </li>
-          <li>
-            <lab-link [href]="author.github" caption="GitHub"></lab-link>
-          </li>
+          <li><lab-link [href]="author.github" caption="GitHub"></lab-link></li>
         </ul>
       </main>
     </article>
   `,
-  styles: [],
 })
 export default class AboutPage {
-  author: any = {
-    name: 'Alberto Basalo',
-    www: 'https://www.albertobasalo.dev',
-    github: 'https://github.com/albertobasalo',
-    linkedIn: 'https://www.linkedin.com/in/albertobasalo/',
-    twitter: 'https://twitter.com/albertobasalo',
-  };
+  author = inject(AboutService).getAuthor();
 }

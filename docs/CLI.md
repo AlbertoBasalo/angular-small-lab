@@ -43,3 +43,11 @@ ng g i routes/about/author --type=interface
 ng g s routes/about/about
 # provide and inject the service on the component
 ```
+
+## 6️⃣ Presenter component with Input
+
+```bash
+# generate a typed presenter with a custom selector
+ng g c routes/about/author --flat --type=view --selector=lab-author-view
+
+```

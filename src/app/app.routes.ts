@@ -7,4 +7,8 @@ export const appRoutes: Route[] = [
     path: 'about',
     loadComponent: () => import('./routes/about/about.page'),
   },
+  {
+    path: 'contact',
+    loadComponent: () => import('./routes/contact/contact.page'),
+  },
 ];

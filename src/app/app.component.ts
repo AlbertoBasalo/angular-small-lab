@@ -16,7 +16,8 @@ import { LinkComponent } from './ui/components/link.component';
           >
         </ul>
         <ul>
-          <a routerLink="/about">ℹ️ About us</a>
+          <li><a routerLink="/about">ℹ️ About us</a></li>
+          <li><a routerLink="/contact">📧 Contact</a></li>
         </ul>
       </nav>
     </header>

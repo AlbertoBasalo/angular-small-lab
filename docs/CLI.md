@@ -61,3 +61,11 @@ ng g c routes/contact --type=form --selector=lab-contact-form
 ng g i routes/contact/contact --type=interface
 ng g s routes/contact/contact
 ```
+
+````
+
+## 8️⃣ Reactive forms
+
+```bash
+# import ReactiveFormsModule at ContactForm
+````

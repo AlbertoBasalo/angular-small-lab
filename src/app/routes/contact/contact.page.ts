@@ -6,7 +6,7 @@ import { Contact } from './contact.interface';
 @Component({
   standalone: true,
   imports: [CommonModule, ContactForm],
-  template: ` <lab-contact-form send($event)></lab-contact-form> `,
+  template: ` <lab-contact-form (send)="onSend($event)"></lab-contact-form> `,
   styles: [],
 })
 export default class ContactPage {

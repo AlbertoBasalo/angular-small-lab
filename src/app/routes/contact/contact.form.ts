@@ -1,6 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, inject, Output } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { Contact } from './contact.interface';
 
 @Component({
@@ -13,11 +19,23 @@ import { Contact } from './contact.interface';
         <legend>Contact us</legend>
         <div>
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" formControlName="name" />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            formControlName="name"
+            [attr.aria-invalid]="form.controls['name'].invalid"
+          />
         </div>
         <div>
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" formControlName="email" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            formControlName="email"
+            [attr.aria-invalid]="form.controls['email'].invalid"
+          />
         </div>
         <div>
           <label for="message">Message</label>
@@ -29,7 +47,9 @@ import { Contact } from './contact.interface';
         </div>
       </fieldset>
       <div>
-        <button type="submit" (click)="onSubmit()">Send</button>
+        <button type="submit" (click)="onSubmit()" [disabled]="form.invalid">
+          Send
+        </button>
       </div>
     </form>
   `,
@@ -39,8 +59,11 @@ export class ContactForm {
   @Output() send = new EventEmitter<Contact>();
 
   form: FormGroup = inject(FormBuilder).group({
-    name: 'Alberto Basalo',
-    email: 'alberto@fake.mail',
+    name: ['Alberto Basalo', [Validators.required, Validators.minLength(3)]],
+    email: new FormControl('alberto@fake.mail', [
+      Validators.required,
+      Validators.email,
+    ]),
     message: 'I want to use Angular standalone APIs on 2023!',
   });
 

@@ -62,10 +62,15 @@ ng g i routes/contact/contact --type=interface
 ng g s routes/contact/contact
 ```
 
-````
-
 ## 8️⃣ Reactive forms
 
 ```bash
 # import ReactiveFormsModule at ContactForm
-````
+```
+
+## 9️⃣ Validate forms
+
+```bash
+# declare validation rules
+# give feedback to the user
+```

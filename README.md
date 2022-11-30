@@ -12,25 +12,25 @@ First part of a suite of labs for applications of varying sizes and enduring exp
 
 ### 📺 Container (page) - Presenters (form, table...) ✅
 
-### 🧪 E2E Testing ❌
+### 🧪 E2E Testing ✅
 
 ## 🪴 Laboratory for _medium_ Angular applications
 
-> repository coming soon, with all the features of _small_ plus...
+> a new repository coming soon, with all the features of _small_ plus...
 
-### 🔬 Unit Testing ❌
+### 🔬 Unit Testing ⌛
 
-### ♻️ On Push change detection ❌
+### ♻️ On Push change detection ⌛
 
-### 🗃️ Reactive State management ❌
+### 🗃️ Reactive State management ⌛
 
 ## 🌳 Laboratory for _large_ Angular applications
 
-> repository coming soon, with all the features of _medium_ plus...
+> a new repository coming soon, with all the features of _medium_ plus...
 
-### 📚 Libraries on multi-project mono-repo ❌
+### 📚 Libraries on multi-project mono-repo ⌛
 
-### 👔 Domain logic extracted from Angular details ❌
+### 👔 Domain logic extracted from Angular details ⌛
 
 ## 🚀 Steps to run
 

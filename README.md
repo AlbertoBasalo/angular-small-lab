@@ -22,7 +22,7 @@ First part of a set of laboratories for applications of different sizes and scop
 
 ### 🗃️ Reactive State management ⌛
 
-### 🔬 Unit Testing ⌛
+### 🧪 Component Testing ⌛
 
 ## 🌳 Laboratory for _large_ Angular applications
 
@@ -31,6 +31,8 @@ First part of a set of laboratories for applications of different sizes and scop
 ### 📚 Libraries on multi-project mono-repo ⌛
 
 ### 👔 Domain logic extracted from Angular details ⌛
+
+### 🧪 Unit Testing ⌛
 
 ---
 

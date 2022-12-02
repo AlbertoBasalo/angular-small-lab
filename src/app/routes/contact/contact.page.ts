@@ -9,7 +9,6 @@ import { ContactService } from './contact.service';
   standalone: true,
   imports: [CommonModule, ContactForm],
   template: ` <lab-contact-form (send)="onSend($event)"></lab-contact-form> `,
-  styles: [],
 })
 export default class ContactPage {
   constructor(private contactService: ContactService, private router: Router) {}

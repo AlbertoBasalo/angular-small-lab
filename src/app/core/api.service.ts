@@ -13,7 +13,8 @@ export class ApiService {
   getAuthor$() {
     return this.http.get<Author>(`${this.url}/author`);
   }
+
   postContact$(contact: Contact) {
-    return this.http.post(`${this.url}/contacts`, contact);
+    return this.http.post<Contact>(`${this.url}/contacts`, contact);
   }
 }

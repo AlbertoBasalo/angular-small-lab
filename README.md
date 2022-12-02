@@ -1,6 +1,6 @@
 # 🅰️Angular🌱Small🧫Lab
 
-First part of a suite of labs for applications of varying sizes and enduring expectations.
+First part of a set of laboratories for applications of different sizes and scopes.
 
 ## 🌱 Laboratory for _small_ Angular applications
 
@@ -18,11 +18,11 @@ First part of a suite of labs for applications of varying sizes and enduring exp
 
 > a new repository coming soon, with all the features of _small_ plus...
 
-### 🔬 Unit Testing ⌛
-
 ### ♻️ On Push change detection ⌛
 
 ### 🗃️ Reactive State management ⌛
+
+### 🧪 Component Testing ⌛
 
 ## 🌳 Laboratory for _large_ Angular applications
 
@@ -32,18 +32,24 @@ First part of a suite of labs for applications of varying sizes and enduring exp
 
 ### 👔 Domain logic extracted from Angular details ⌛
 
-## 🚀 Steps to run
+### 🧪 Unit Testing ⌛
+
+---
+
+## 📋 Instructions
+
+### 🚀 Steps to run
 
 ```bash
+git clone https://github.com/AlbertoBasalo/angular-small-lab.git
+cd angular-small-lab
 npm i
 npm start
 ```
 
-## 📋 Command Line Interface journal
+> This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
-
-### [See detailed instructions on CLI.md](docs/CLI.md)
+#### 📋 [See detailed instructions on Command Line Interface journal CLI.md](docs/CLI.md)
 
 ---
 

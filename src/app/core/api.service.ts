@@ -6,9 +6,10 @@ import { Author } from '../routes/about/author.interface';
   providedIn: 'root',
 })
 export class ApiService {
+  url = 'http://localhost:3000';
   constructor(private http: HttpClient) {}
 
   getAuthor$() {
-    return this.http.get<Author>('http://localhost:3000/author');
+    return this.http.get<Author>(`${this.url}/author`);
   }
 }

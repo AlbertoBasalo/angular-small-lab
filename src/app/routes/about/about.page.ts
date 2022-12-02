@@ -1,19 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AboutService } from './about.service';
+import { Author } from './author.interface';
 import { AuthorView } from './author.view';
 
 @Component({
   standalone: true,
   imports: [CommonModule, AuthorView],
   providers: [AboutService],
-  template: `
-    <ng-container *ngIf="author$ | async as author">
-      <lab-author-view [author]="author"></lab-author-view>
-    </ng-container>
-  `,
+  template: ` <lab-author-view [author]="author"></lab-author-view> `,
 })
 export default class AboutPage {
-  author$ = this.aboutService.getAuthor$();
-  constructor(private aboutService: AboutService) {}
+  author!: Author;
+  constructor(aboutService: AboutService) {
+    aboutService.getAuthor$().subscribe((author) => (this.author = author));
+  }
 }

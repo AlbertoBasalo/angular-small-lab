@@ -5,5 +5,19 @@
     "github": "https://github.com/albertobasalo",
     "linkedIn": "https://www.linkedin.com/in/albertobasalo/",
     "twitter": "https://twitter.com/albertobasalo"
-  }
+  },
+  "contacts": [
+    {
+      "name": "Alberto Basalo",
+      "email": "alberto@fake.mail",
+      "message": "I want to use Angular standalone APIs on 2023!",
+      "id": 1
+    },
+    {
+      "name": "Alberto Basalo",
+      "email": "alberto@fake.mail",
+      "message": "I want to use Angular standalone APIs on 2023!",
+      "id": 2
+    }
+  ]
 }

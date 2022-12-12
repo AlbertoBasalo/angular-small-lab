@@ -1,40 +1,25 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { LinkComponent } from './ui/components/link.component';
+import { FooterSection } from './core/footer.section';
+import { HeaderSection } from './core/header.section';
 
 @Component({
   selector: 'lab-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, LinkComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
+    HeaderSection,
+    FooterSection,
+  ],
   template: `
-    <header>
-      <nav>
-        <ul>
-          <strong
-            ><a routerLink="/"> {{ title }} </a></strong
-          >
-        </ul>
-        <ul>
-          <li><a routerLink="/about">ℹ️ About us</a></li>
-          <li><a routerLink="/contact">📧 Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <lab-header-section [title]="title"></lab-header-section>
     <router-outlet></router-outlet>
-    <footer>
-      <p>
-        ©️ {{ year }}
-        <lab-link
-          caption="Repository code on GitHub"
-          [href]="repoUrl"
-        ></lab-link>
-      </p>
-    </footer>
+    <lab-footer-section></lab-footer-section>
   `,
 })
 export class AppComponent {
   title = '🅰️ 🌱 🧫 angular-small-lab';
-  repoUrl = 'https://github.com/AlbertoBasalo/angular-small-lab';
-  year = new Date().getFullYear();
 }

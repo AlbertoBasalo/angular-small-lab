@@ -14,8 +14,8 @@ import { Component } from '@angular/core';
         <ul>
           <li>🏝️ Full Standalone APIs ✅</li>
           <li>🗺️ Lazy Route Components ✅</li>
-          <li>📺 Container (page)✅ - Presenters (form, table...) ❌</li>
-          <li>🧪 E2E Testing ❌</li>
+          <li>📺 Container (page) - Presenters (form, table...) ✅</li>
+          <li>🧪 E2E Testing ⌛</li>
         </ul>
       </main>
     </article>

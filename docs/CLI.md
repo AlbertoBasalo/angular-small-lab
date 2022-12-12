@@ -78,5 +78,13 @@ ng g s routes/contact/contact
 ## 1️⃣0️⃣ Http client
 
 ```bash
+# provide httpClient on main bootstrap
+ng g s core/api
+# get author information
+```
 
+## 1️⃣1️⃣ Http post
+
+```bash
+# post the contact request data
 ```

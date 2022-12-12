@@ -89,7 +89,7 @@ ng g s core/api
 # post the contact request data
 ```
 
-## layout sections
+## 1️⃣2️⃣ core layout sections
 
 ```bash
 ng g c core/header --flat --selector=lab-header-section  --type=section

@@ -95,3 +95,10 @@ ng g s core/api
 ng g c core/header --flat --selector=lab-header-section  --type=section
 ng g c core/footer --flat --selector=lab-footer-section  --type=section
 ```
+
+## 1️⃣3️⃣ error interceptor
+
+```bash
+api.interceptor.ts
+main
+```

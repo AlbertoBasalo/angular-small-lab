@@ -102,3 +102,10 @@ ng g c core/footer --flat --selector=lab-footer-section  --type=section
 api.interceptor.ts
 main
 ```
+
+## 1️⃣4️⃣ inject function token
+
+```bash
+api.interceptor.ts
+main
+```

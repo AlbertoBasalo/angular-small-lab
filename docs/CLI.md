@@ -132,3 +132,15 @@ ng g i routes/auth/credentials --type=interface
 npm i json-server-auth
 ng g s routes/auth/auth
 ```
+
+## 1️⃣7️⃣ typescript utility types
+
+```bash
+
+```
+
+## 1️⃣8️⃣ rxjs pipes
+
+```bash
+
+```

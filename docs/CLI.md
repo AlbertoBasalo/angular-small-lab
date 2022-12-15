@@ -118,3 +118,12 @@ ng g c routes/auth/login --flat --type=page --skip-selector
 auth.routes.ts
 app.routes.ts
 ```
+
+## 1️⃣6️⃣ same form
+
+```bash
+ng g c routes/auth/credentials --flat --selector=lab-credentials-form --type=form
+ng g i routes/auth/credentials --type=interface
+```
+
+ng g s routes/auth/auth

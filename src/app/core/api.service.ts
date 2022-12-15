@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Author } from '../routes/about/author.interface';
+import { Credentials } from '../routes/auth/credentials.interface';
 import { Contact } from '../routes/contact/contact.interface';
 import { API_URL } from './token.providers';
 
@@ -17,5 +18,13 @@ export class ApiService {
 
   postContact$(contact: Contact) {
     return this.http.post<Contact>(`${this.url}/contacts`, contact);
+  }
+
+  postUser$(userCredentials: Omit<Credentials, 'confirmPassword'>) {
+    return this.http.post<any>(`${this.url}/users`, userCredentials);
+  }
+
+  postLogin$(loginCredentials: Pick<Credentials, 'email' | 'password'>) {
+    return this.http.post<any>(`${this.url}/login`, loginCredentials);
   }
 }

@@ -126,4 +126,9 @@ ng g c routes/auth/credentials --flat --selector=lab-credentials-form --type=for
 ng g i routes/auth/credentials --type=interface
 ```
 
+## 1️⃣6️⃣ auth service
+
+```bash
+npm i json-server-auth
 ng g s routes/auth/auth
+```

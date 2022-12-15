@@ -19,5 +19,13 @@
       "message": "I want to use Angular standalone APIs on 2023!",
       "id": 2
     }
+  ],
+  "users": [
+    {
+      "email": "elon@mars.com",
+      "password": "$2a$10$3QGkqSjNVROzJmjRK6RafOlDDJGRc1ilqBDmfyp8VAATejLt2exm.",
+      "name": "Elon",
+      "id": 1
+    }
   ]
 }

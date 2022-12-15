@@ -109,3 +109,12 @@ main
 api.interceptor.ts
 main
 ```
+
+## 1️⃣5️⃣ auth routes
+
+```bash
+ng g c routes/auth/register --flat --type=page --skip-selector
+ng g c routes/auth/login --flat --type=page --skip-selector
+auth.routes.ts
+app.routes.ts
+```

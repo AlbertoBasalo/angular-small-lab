@@ -14,6 +14,14 @@ import { RouterLink } from '@angular/router';
             <strong>{{ title }}</strong>
           </a>
         </ul>
+        <ul>
+          <li>
+            <a routerLink="/auth/register">🔏 Register</a>
+          </li>
+          <li>
+            <a routerLink="/auth/login">🔐 Log In</a>
+          </li>
+        </ul>
       </nav>
     </header>
   `,

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { ApiService } from 'src/app/core/api.service';
 import { Contact } from './contact.interface';
 
@@ -6,7 +6,7 @@ import { Contact } from './contact.interface';
   providedIn: 'root',
 })
 export class ContactService {
-  constructor(private api: ApiService) {}
+  api: ApiService = inject(ApiService);
   post$(contact: Contact) {
     return this.api.postContact$(contact);
   }

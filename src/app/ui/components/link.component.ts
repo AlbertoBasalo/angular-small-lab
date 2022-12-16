@@ -1,9 +1,8 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 @Component({
   selector: 'lab-link',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   template: ` <a [href]="href" [target]="target">{{ caption }}</a> `,
   styles: [],
 })

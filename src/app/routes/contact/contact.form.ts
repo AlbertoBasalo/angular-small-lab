@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import {
   FormBuilder,
@@ -12,7 +11,7 @@ import { Contact } from './contact.interface';
 @Component({
   selector: 'lab-contact-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   template: `
     <form [formGroup]="form">
       <fieldset>

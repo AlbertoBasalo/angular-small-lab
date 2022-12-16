@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContactForm } from './contact.form';
@@ -7,7 +6,7 @@ import { ContactService } from './contact.service';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, ContactForm],
+  imports: [ContactForm],
   template: ` <lab-contact-form (send)="onSend($event)"></lab-contact-form> `,
 })
 export default class ContactPage {

@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { LinkComponent } from 'src/app/ui/components/link.component';
 import { Author } from './author.interface';
@@ -6,7 +5,7 @@ import { Author } from './author.interface';
 @Component({
   selector: 'lab-author-view',
   standalone: true,
-  imports: [CommonModule, LinkComponent],
+  imports: [LinkComponent],
   template: `
     <article>
       <header>

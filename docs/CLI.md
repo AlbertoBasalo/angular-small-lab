@@ -144,3 +144,9 @@ ng g s routes/auth/auth
 ```bash
 
 ```
+
+## 1️⃣9️⃣ no common module
+
+```bash
+
+```

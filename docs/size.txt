@@ -1,0 +1,43 @@
+✔ Common
+
+Initial Chunk Files           | Names                       |  Raw Size | Estimated Transfer Size
+main.80f7764fd655f0d7.js      | main                        | 221.85 kB |                61.28 kB
+styles.10008bcd794edb98.css   | styles                      |  70.08 kB |                 8.38 kB
+polyfills.da93c0015af10c05.js | polyfills                   |  33.09 kB |                10.64 kB
+runtime.a00163c1e51ce39d.js   | runtime                     |   2.82 kB |                 1.36 kB
+
+                              | Initial Total               | 327.84 kB |                81.66 kB
+
+Lazy Chunk Files              | Names                       |  Raw Size | Estimated Transfer Size
+261.4da21ad7ca22bc77.js       | routes-contact-contact-page |  30.33 kB |                 6.93 kB
+common.6d4adf3a0fc1d830.js    | common                      |   2.91 kB |                 1.05 kB
+492.4de3fa85ad868009.js       | routes-contact-contact-page |   2.42 kB |               960 bytes
+920.99e0ca1d292be12b.js       | routes-about-about-page     |   2.27 kB |               854 bytes
+635.2157a209a123964b.js       | register-page               | 689 bytes |               412 bytes
+706.1f9bc93df28a4a01.js       | login-page                  | 686 bytes |               414 bytes
+22.a008e8701a2bedcd.js        | routes-auth-auth-routes     | 388 bytes |               208 bytes
+
+Build at: 2022-12-16T16:33:25.641Z - Hash: 350fde244b644ea1 - Time: 11920ms
+
+
+
+✔ Without imports
+
+Initial Chunk Files           | Names                       |  Raw Size | Estimated Transfer Size
+main.ecce6a3b8caa7242.js      | main                        | 221.79 kB |                61.23 kB
+styles.10008bcd794edb98.css   | styles                      |  70.08 kB |                 8.38 kB
+polyfills.da93c0015af10c05.js | polyfills                   |  33.09 kB |                10.64 kB
+runtime.a59b3a3d7f1d21d1.js   | runtime                     |   2.82 kB |                 1.37 kB
+
+                              | Initial Total               | 327.79 kB |                81.61 kB
+
+Lazy Chunk Files              | Names                       |  Raw Size | Estimated Transfer Size
+261.4da21ad7ca22bc77.js       | routes-contact-contact-page |  30.33 kB |                 6.93 kB
+common.6d4adf3a0fc1d830.js    | common                      |   2.91 kB |                 1.05 kB
+492.7c324849e303ea25.js       | routes-contact-contact-page |   2.40 kB |               946 bytes
+920.b7dea7f88c8fb908.js       | routes-about-about-page     |   2.39 kB |               897 bytes
+635.ee1d711bd286f0f8.js       | register-page               | 674 bytes |               400 bytes
+706.20f372da694fa93f.js       | login-page                  | 671 bytes |               399 bytes
+22.a008e8701a2bedcd.js        | routes-auth-auth-routes     | 388 bytes |               208 bytes
+
+Build at: 2022-12-16T16:34:58.451Z - Hash: 6d51cf2d0b968179 - Time: 6603ms

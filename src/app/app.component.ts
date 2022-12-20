@@ -10,10 +10,8 @@ import { UserToken } from './routes/auth/user-token.interface';
   standalone: true,
   imports: [RouterOutlet, HeaderSection, FooterSection],
   template: `
-    <lab-header-section
-      [title]="title"
-      [userToken]="userToken"
-    ></lab-header-section>
+    <lab-header-section [title]="title" [userToken]="userToken">
+    </lab-header-section>
     <router-outlet></router-outlet>
     <lab-footer-section></lab-footer-section>
   `,

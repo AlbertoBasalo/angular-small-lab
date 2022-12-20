@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { UserToken } from '../routes/auth/user-token.interface';
@@ -6,7 +6,7 @@ import { UserToken } from '../routes/auth/user-token.interface';
 @Component({
   selector: 'lab-header-section',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [NgIf, RouterLink],
   template: `
     <header>
       <nav>
@@ -36,7 +36,6 @@ import { UserToken } from '../routes/auth/user-token.interface';
       </nav>
     </header>
   `,
-  styles: [],
 })
 export class HeaderSection {
   @Input() title = '';

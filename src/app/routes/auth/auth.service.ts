@@ -12,22 +12,21 @@ export class AuthService {
   apiService = inject(ApiService);
   router = inject(Router);
 
-  saveUserToken = tap((userToken: UserToken) =>
-    localStorage.setItem('userToken', JSON.stringify(userToken))
+  userToken = localStorage.getItem('userToken');
+  userToken$ = new BehaviorSubject<UserToken>(
+    this.userToken ? JSON.parse(this.userToken) : null
   );
   emitUserToken = tap((userToken: UserToken) =>
     this.userToken$.next(userToken)
+  );
+  saveUserToken = tap((userToken: UserToken) =>
+    localStorage.setItem('userToken', JSON.stringify(userToken))
   );
   navigateToHome = tap(() => this.router.navigate(['/']));
   processUserToken = pipe(
     this.emitUserToken,
     this.saveUserToken,
     this.navigateToHome
-  );
-
-  userToken = localStorage.getItem('userToken');
-  userToken$ = new BehaviorSubject<UserToken>(
-    this.userToken ? JSON.parse(this.userToken) : null
   );
 
   register$(credentials: Credentials) {

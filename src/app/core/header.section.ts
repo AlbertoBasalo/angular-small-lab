@@ -16,9 +16,12 @@ import { UserToken } from '../routes/auth/user-token.interface';
           </a>
         </ul>
         <ul>
-          <ng-container *ngIf="user; else noUser">
+          <ng-container *ngIf="userToken; else noUser">
             <li>
               <a routerLink="/admin">👔 Admin</a>
+            </li>
+            <li>
+              <span>🖖🏼 Hi {{ userToken.user.name }}</span>
             </li>
           </ng-container>
           <ng-template #noUser>
@@ -37,5 +40,5 @@ import { UserToken } from '../routes/auth/user-token.interface';
 })
 export class HeaderSection {
   @Input() title = '';
-  @Input() user: UserToken | null = null;
+  @Input() userToken: UserToken | null = null;
 }

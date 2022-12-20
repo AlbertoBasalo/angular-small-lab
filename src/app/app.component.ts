@@ -10,7 +10,10 @@ import { UserToken } from './routes/auth/user-token.interface';
   standalone: true,
   imports: [RouterOutlet, HeaderSection, FooterSection],
   template: `
-    <lab-header-section [title]="title" [user]="user"></lab-header-section>
+    <lab-header-section
+      [title]="title"
+      [userToken]="userToken"
+    ></lab-header-section>
     <router-outlet></router-outlet>
     <lab-footer-section></lab-footer-section>
   `,
@@ -18,8 +21,8 @@ import { UserToken } from './routes/auth/user-token.interface';
 export class AppComponent {
   auth = inject(AuthService);
   title = '🅰️ 🌱 🧫 angular-small-lab';
-  user: UserToken | null = null;
+  userToken: UserToken | null = null;
   constructor() {
-    this.auth.user$.subscribe((user) => (this.user = user));
+    this.auth.userToken$.subscribe((userToken) => (this.userToken = userToken));
   }
 }

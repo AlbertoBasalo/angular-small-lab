@@ -12,28 +12,34 @@ export class AuthService {
   apiService = inject(ApiService);
   router = inject(Router);
 
-  saveUser = tap((userToken: UserToken) =>
+  saveUserToken = tap((userToken: UserToken) =>
     localStorage.setItem('userToken', JSON.stringify(userToken))
   );
-  emitUer = tap((userToken: UserToken) => this.user$.next(userToken));
+  emitUserToken = tap((userToken: UserToken) =>
+    this.userToken$.next(userToken)
+  );
   navigateToHome = tap(() => this.router.navigate(['/']));
-  processUserInfo = pipe(this.emitUer, this.saveUser, this.navigateToHome);
+  processUserToken = pipe(
+    this.emitUserToken,
+    this.saveUserToken,
+    this.navigateToHome
+  );
 
-  user = localStorage.getItem('userToken');
-  user$ = new BehaviorSubject<UserToken>(
-    this.user ? JSON.parse(this.user) : null
+  userToken = localStorage.getItem('userToken');
+  userToken$ = new BehaviorSubject<UserToken>(
+    this.userToken ? JSON.parse(this.userToken) : null
   );
 
   register$(credentials: Credentials) {
     const { confirmPassword, ...userCredentials } = credentials;
     return this.apiService
       .postUser$(userCredentials)
-      .pipe(this.processUserInfo);
+      .pipe(this.processUserToken);
   }
   logIn$(credentials: Credentials) {
     const { name, confirmPassword, ...loginCredentials } = credentials;
     return this.apiService
       .postLogin$(loginCredentials)
-      .pipe(this.processUserInfo);
+      .pipe(this.processUserToken);
   }
 }

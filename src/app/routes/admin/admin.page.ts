@@ -20,6 +20,6 @@ export default class AdminPage {
   auth = inject(AuthService);
   userToken: UserToken | null = null;
   constructor() {
-    this.auth.user$.subscribe((userToken) => (this.userToken = userToken));
+    this.auth.userToken$.subscribe((userToken) => (this.userToken = userToken));
   }
 }

@@ -154,9 +154,9 @@ ng g s routes/auth/auth
 ## 2️⃣0️⃣ Navigation menu
 
 ```bash
-# provide httpClient on main bootstrap
-ng g s core/api
-# get author information
+ng g c routes/admin --type=page --skip-selector
+ng g i routes/auth/userToken --type=interface
+
 ```
 
 ---

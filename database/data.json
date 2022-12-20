@@ -1,35 +1,35 @@
 {
   "author": {
-    "name": "Alberto Basalo",
-    "www": "https://www.albertobasalo.dev",
     "github": "https://github.com/albertobasalo",
     "linkedIn": "https://www.linkedin.com/in/albertobasalo/",
-    "twitter": "https://twitter.com/albertobasalo"
+    "name": "Alberto Basalo",
+    "twitter": "https://twitter.com/albertobasalo",
+    "www": "https://www.albertobasalo.dev"
   },
   "contacts": [
     {
-      "name": "Alberto Basalo",
       "email": "alberto@fake.mail",
+      "id": 1,
       "message": "I want to use Angular standalone APIs on 2023!",
-      "id": 1
+      "name": "Alberto Basalo"
     },
     {
-      "name": "Alberto Basalo",
       "email": "alberto@fake.mail",
+      "id": 2,
       "message": "I want to use Angular standalone APIs on 2023!",
-      "id": 2
+      "name": "Alberto Basalo"
     },
     {
-      "name": "Alberto Basalo",
       "email": "alberto@fake.mail",
+      "id": 3,
       "message": "I want to use Angular standalone APIs on 2023!",
-      "id": 3
+      "name": "Alberto Basalo"
     }
   ],
   "users": [
     {
       "email": "elon@mars.com",
-      "password": "$2a$10$3QGkqSjNVROzJmjRK6RafOlDDJGRc1ilqBDmfyp8VAATejLt2exm.",
+      "password": "$2a$10$PtZWpaAUdyz1YdLrWR0bIOfDKgwgcidwJVTrNR0BvVNKyx0hdNX7q",
       "name": "Elon",
       "id": 1
     }

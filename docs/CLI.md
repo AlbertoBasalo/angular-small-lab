@@ -150,3 +150,18 @@ ng g s routes/auth/auth
 ```bash
 
 ```
+
+## 2️⃣0️⃣ Navigation menu
+
+```bash
+# provide httpClient on main bootstrap
+ng g s core/api
+# get author information
+```
+
+---
+
+21 - guards
+https://stackblitz.com/edit/angular-ivy-unzxck?file=src%2Fmain.ts
+
+By Alberto Basalo

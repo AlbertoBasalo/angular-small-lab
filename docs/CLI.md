@@ -179,9 +179,13 @@ ng g i routes/auth/userToken --type=interface
 # 🚗 services
 ```
 
+## 2️⃣4️⃣ cypres e2e tests
+
+```bash
+ng add @cypress/schematic
+npm run e2e
+```
+
 ---
 
-21 - guards
-https://stackblitz.com/edit/angular-ivy-unzxck?file=src%2Fmain.ts
-
-By Alberto Basalo
+By [Alberto Basalo](https://twitter.com/AlbertoBasalo)

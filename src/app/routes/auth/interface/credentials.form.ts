@@ -11,7 +11,6 @@ import { Credentials } from '../services/credentials.interface';
     <form [formGroup]="form">
       <fieldset>
         <div *ngIf="isNewUser">
-          <legend>Contact us</legend>
           <div>
             <label for="name">Name</label>
             <input

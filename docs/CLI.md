@@ -165,6 +165,13 @@ ng g i routes/auth/userToken --type=interface
 # src\app\routes\auth\auth.guard.ts
 ```
 
+## 2️⃣2️⃣ auth interceptor
+
+```bash
+
+
+```
+
 ---
 
 21 - guards

@@ -41,4 +41,12 @@ export class AuthService {
       .postLogin$(loginCredentials)
       .pipe(this.processUserToken);
   }
+  logOut() {
+    localStorage.removeItem('userToken');
+    this.userToken$.next({
+      accessToken: '',
+      user: { id: 0, name: '', email: '' },
+    });
+    this.router.navigate(['/auth/login']);
+  }
 }

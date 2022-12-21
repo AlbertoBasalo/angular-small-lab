@@ -1,8 +1,8 @@
 import { inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 
-export function authGuard() {
+export const authGuard: CanActivateFn = () => {
   const authService = inject(AuthService);
   const isAnonymous = authService.userToken$.value === null;
   if (isAnonymous) {
@@ -10,4 +10,4 @@ export function authGuard() {
     router.navigate(['/auth/login']);
   }
   return true;
-}
+};

@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { authGuard } from './routes/auth/auth.guard';
 import { HomePage } from './routes/home/home.page';
 
 export const APP_ROUTES: Route[] = [
@@ -9,6 +10,7 @@ export const APP_ROUTES: Route[] = [
   },
   {
     path: 'admin',
+    canActivate: [authGuard],
     loadComponent: () => import('./routes/admin/admin.page'),
   },
   {

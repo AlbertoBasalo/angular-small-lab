@@ -169,7 +169,14 @@ ng g i routes/auth/userToken --type=interface
 
 ```bash
 
+```
 
+## 2️⃣3️⃣ folder tiering
+
+```bash
+# 🧳 interface
+# 🛣️ routes
+# 🚗 services
 ```
 
 ---

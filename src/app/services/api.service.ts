@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Author } from '../routes/about/author.interface';
-import { Credentials } from '../routes/auth/credentials.interface';
-import { UserToken } from '../routes/auth/user-token.interface';
-import { Contact } from '../routes/contact/contact.interface';
+import { Author } from '@routes/about/author.interface';
+import { Credentials } from '@routes/auth/services/credentials.interface';
+import { UserToken } from '@routes/auth/services/user-token.interface';
+import { Contact } from '@routes/contact/contact.interface';
+
 import { API_URL } from './token.providers';
 
 @Injectable({

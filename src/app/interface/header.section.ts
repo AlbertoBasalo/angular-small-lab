@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { UserToken } from '../routes/auth/user-token.interface';
+import { UserToken } from '@routes/auth/services/user-token.interface';
 
 @Component({
   selector: 'lab-header-section',

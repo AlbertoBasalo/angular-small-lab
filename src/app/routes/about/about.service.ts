@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { ApiService } from 'src/app/core/api.service';
+import { ApiService } from '@srv/api.service';
 
 @Injectable()
 export class AboutService {

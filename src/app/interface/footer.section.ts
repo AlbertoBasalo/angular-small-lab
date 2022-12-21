@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LinkComponent } from '../ui/components/link.component';
+import { LinkComponent } from './link.component';
 
 @Component({
   selector: 'lab-footer-section',

@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from '@srv/api.service';
 import { BehaviorSubject, pipe, tap } from 'rxjs';
-import { ApiService } from 'src/app/core/api.service';
 import { Credentials } from './credentials.interface';
 import { UserToken } from './user-token.interface';
 

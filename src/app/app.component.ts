@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FooterSection } from './core/footer.section';
-import { HeaderSection } from './core/header.section';
-import { AuthService } from './routes/auth/auth.service';
-import { UserToken } from './routes/auth/user-token.interface';
+import { AuthService } from '@routes/auth/services/auth.service';
+import { UserToken } from '@routes/auth/services/user-token.interface';
+import { FooterSection } from '@ui/footer.section';
+import { HeaderSection } from '@ui/header.section';
 
 @Component({
   selector: 'lab-root',

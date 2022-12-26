@@ -1,24 +1,6 @@
-describe('The Angular Small Laboratory home page', () => {
+describe('The Register Page', () => {
   beforeEach(() => {
-    cy.visit('/');
-    cy.log('runs once before each tests');
-  });
-  it('contains the title text', () => {
-    cy.contains('Angular Laboratory for small applications');
-  });
-  it('has a nav element', () => {
-    cy.get('nav');
-  });
-  it('displays an unordered list of features inside the main section', () => {
-    cy.get('main ul').should('be.visible');
-  });
-  it('not have a link to the secured admin route', () => {
-    // cy.wait(1000);
-    cy.get('a[href*="admin"]').should('not.exist');
-  });
-  it('navigates to register page', () => {
-    cy.get('a[href*="auth/register"]').click();
-    cy.url().should('include', '/auth/register');
+    cy.visit('/auth/register');
   });
   it('has a form with 4 fields', () => {
     cy.visit('/auth/register');

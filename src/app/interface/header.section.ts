@@ -21,6 +21,9 @@ import { UserToken } from '@routes/auth/services/user-token.interface';
               <a routerLink="/admin">👔 Admin</a>
             </li>
             <li>
+              <a routerLink="/posts/editor/new">✍🏼 Write</a>
+            </li>
+            <li>
               <span>🖖🏼 Hi {{ userToken.user.name }}</span>
             </li>
           </ng-container>

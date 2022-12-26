@@ -13,4 +13,9 @@ describe('The main application routes', () => {
     cy.get('a[href*="auth/register"]').click();
     cy.url().should('include', '/auth/register');
   });
+  it('navigates to new post editor', () => {
+    cy.register();
+    cy.get('a[href*="posts/editor/new"]').click();
+    cy.url().should('include', '/posts/editor/new');
+  });
 });

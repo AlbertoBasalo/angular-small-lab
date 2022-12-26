@@ -33,6 +33,7 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "@picocss/pico": "^1.5.6",
+    "@ts-stack/markdown": "^1.4.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -43,6 +44,7 @@
     "@angular/compiler-cli": "^15.0.0",
     "@cypress/schematic": "^2.4.0",
     "@types/jasmine": "~4.3.0",
+    "cypress": "latest",
     "jasmine-core": "~4.5.0",
     "json-server": "^0.17.1",
     "json-server-auth": "^2.1.0",
@@ -51,7 +53,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "typescript": "~4.8.2",
-    "cypress": "latest"
+    "typescript": "~4.8.2"
   }
 }

@@ -186,6 +186,16 @@ ng add @cypress/schematic
 npm run e2e
 ```
 
+## 2️⃣5️⃣ feature post editor
+
+```bash
+ng g c routes/posts/editor --type=page --skip-selector
+```
+
 ---
 
 By [Alberto Basalo](https://twitter.com/AlbertoBasalo)
+
+```
+
+```

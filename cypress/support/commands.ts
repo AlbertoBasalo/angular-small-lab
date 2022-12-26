@@ -41,3 +41,24 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+declare namespace Cypress {
+  interface Chainable<Subject = any> {
+    register(): typeof register;
+  }
+}
+
+function register(): void {
+  cy.visit('/auth/register');
+  cy.get('form input[name="name"]').type('Santa Claus');
+  cy.get('form input[name="email"]').type('santa@northpole.org');
+  cy.get('form input[name="password"]').type('20221224');
+  cy.get('form input[name="confirmPassword"]').type('20221224');
+  const url = 'http://localhost:3000/users';
+  const response = { statusCode: 201, body: {} };
+  cy.intercept('post', url, response).as('post_users');
+  cy.get('form button[type="submit"]').click();
+  cy.wait('@post_users');
+}
+
+Cypress.Commands.add('register', register);

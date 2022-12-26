@@ -17,7 +17,7 @@ import { Marked } from '@ts-stack/markdown';
       <textarea rows="10" formControlName="markdown"></textarea>
     </form>
     <button id="publish" (click)="onPublishClick()">Publish</button>
-    <pre id="html">{{ html | json }}</pre>
+    <div id="html" [innerHTML]="html"></div>
   `,
   styles: [],
 })

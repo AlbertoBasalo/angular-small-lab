@@ -1,7 +1,9 @@
 ## Typographic replacements
 
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+> A sample blockquote
+>
+> _Author_
 
 **strong** _emphasis_ ~~strikethrough~~
 
-[link](http://example.com) [link with title](http://example.com "title")
+[link with title](http://example.com "title")

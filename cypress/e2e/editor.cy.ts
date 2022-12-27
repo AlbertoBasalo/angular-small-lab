@@ -6,14 +6,16 @@ describe('The posts editor page', () => {
     cy.visit('/posts/editor/new');
   });
   it('transforms titles and lines', () => {
-    cy.get('form textarea').type('# Hello world!{enter}This is a new line.');
-    cy.get('#publish').click();
-    cy.get('#html').contains('Hello world!');
+    cy.get('#title').type('Hello World!');
+    cy.get('#markdown').type('## Hello!{enter}World.');
+    // cy.get('#publish').click();
+    cy.get('#html').contains('Hello');
   });
   it('transforms a complex document', () => {
     cy.fixture('sample.md').then((sample) => {
-      cy.get('form textarea').clear().invoke('val', sample).trigger('input');
-      cy.get('#publish').click();
+      cy.get('#title').type('Sample Document');
+      cy.get('#markdown').clear().invoke('val', sample).trigger('input');
+      // cy.get('#publish').click();
       cy.get('#html').contains('Typographic replacements');
     });
   });

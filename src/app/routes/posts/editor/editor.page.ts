@@ -1,36 +1,34 @@
-import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-import { Marked } from '@ts-stack/markdown';
+import { ContentView } from './content.view';
+import { EditorForm } from './editor.form';
+import { EditorService } from './editor.service';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [EditorForm, ContentView],
   template: `
-    <form [formGroup]="form">
-      <textarea rows="10" formControlName="markdown"></textarea>
-    </form>
-    <button id="publish" (click)="onPublishClick()">Publish</button>
-    <div id="html" [innerHTML]="html"></div>
+    <div class="grid">
+      <lab-editor-form
+        (titleChange)="onTitleChange($event)"
+        (markdownChange)="onMarkdownChange($event)"
+      ></lab-editor-form>
+      <lab-content-view [title]="title" [html]="html"></lab-content-view>
+    </div>
+    <!-- <button id="publish" (click)="onPublishClick()">Publish</button> -->
   `,
   styles: [],
 })
 export default class EditorPage {
+  service = inject(EditorService);
   html = '';
+  title = '';
+  markdown = '';
 
-  form: FormGroup = inject(FormBuilder).group({
-    markdown: new FormControl('', Validators.required),
-  });
-  onPublishClick() {
-    console.log('onPublishClick', this.form.value);
-    const marked = Marked.parse(this.form.value.markdown);
-    console.log('marked', marked);
-    this.html = marked;
+  onTitleChange(title: string) {
+    this.title = title;
+  }
+  onMarkdownChange(markdown: string) {
+    this.markdown = markdown;
+    this.html = this.service.transform(markdown);
   }
 }

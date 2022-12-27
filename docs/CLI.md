@@ -197,7 +197,9 @@ ng g c routes/posts/editor --type=page --skip-selector
 ## 2️⃣6️⃣ refactor to components and services
 
 ```bash
-
+ng g c routes/posts/editor/editor --flat --selector=lab-editor-form --type=form
+ng g s routes/posts/editor/editor
+ng g c routes/posts/editor/content --flat --selector=lab-content-view --type=view
 ```
 
 ---

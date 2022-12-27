@@ -49,25 +49,8 @@ declare namespace Cypress {
 }
 
 function register(): void {
-  // cy.visit('/auth/register');
-  // cy.get('form input[name="name"]').type('Santa Claus');
-  // cy.get('form input[name="email"]').type('santa@northpole.org');
-  // cy.get('form input[name="password"]').type('20221224');
-  // cy.get('form input[name="confirmPassword"]').type('20221224');
-  // const url = 'http://localhost:3000/users';
-  // const response = { statusCode: 201, body: {} };
-  // cy.intercept('post', url, response).as('post_users');
-  // // cy.get('form button[type="submit"]').click();
-  // cy.request('POST', url, {
-  //   name: 'Santa Claus',
-  //   email: 'santa@northpole.org',
-  //   password: '20221224',
-  // });
-  // cy.wait('@post_users');
-  window.localStorage.setItem(
-    'token',
-    `{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVsb25AbWFycy5jb20iLCJpYXQiOjE2NzE2MTQyMDksImV4cCI6MTY3MTYxNzgwOSwic3ViIjoiMSJ9.qeVXzJ0Vpg7Dk3h9Uq3a7sAXl2XIWOI4llwnEyxYcCo","user":{"email":"santa@northpole.org","name":"Santa Claus","id":1}}`
-  );
+  const userToken = `{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVsb25AbWFycy5jb20iLCJpYXQiOjE2NzE2MTQyMDksImV4cCI6MTY3MTYxNzgwOSwic3ViIjoiMSJ9.qeVXzJ0Vpg7Dk3h9Uq3a7sAXl2XIWOI4llwnEyxYcCo","user":{"email":"santa@northpole.org","name":"Santa Claus","id":1}}`;
+  window.localStorage.setItem('userToken', userToken);
 }
 
 Cypress.Commands.add('register', register);

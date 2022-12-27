@@ -14,7 +14,7 @@ import { EditorService } from './editor.service';
       ></lab-editor-form>
       <lab-content-view [title]="title" [html]="html"></lab-content-view>
     </div>
-    <!-- <button id="publish" (click)="onPublishClick()">Publish</button> -->
+    <button id="publish" (click)="onPublishClick()">Publish</button>
   `,
   styles: [],
 })
@@ -30,5 +30,8 @@ export default class EditorPage {
   onMarkdownChange(markdown: string) {
     this.markdown = markdown;
     this.html = this.service.transform(markdown);
+  }
+  onPublishClick() {
+    this.service.publish(this.title, this.markdown);
   }
 }

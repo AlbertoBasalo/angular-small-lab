@@ -12,10 +12,8 @@ export class AuthService {
   apiService = inject(ApiService);
   router = inject(Router);
 
-  userToken = localStorage.getItem('userToken');
-  userToken$ = new BehaviorSubject<UserToken>(
-    this.userToken ? JSON.parse(this.userToken) : null
-  );
+  userToken = this.getLocalUserToken();
+  userToken$ = new BehaviorSubject<UserToken>(this.userToken);
   emitUserToken = tap((userToken: UserToken) =>
     this.userToken$.next(userToken)
   );
@@ -48,5 +46,12 @@ export class AuthService {
       user: { id: 0, name: '', email: '' },
     });
     this.router.navigate(['/auth/login']);
+  }
+  getLocalUserToken() {
+    const storedUserToken = localStorage.getItem('userToken');
+    if (storedUserToken) {
+      return JSON.parse(storedUserToken);
+    }
+    return null;
   }
 }

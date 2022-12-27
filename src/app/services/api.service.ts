@@ -4,6 +4,7 @@ import { Author } from '@routes/about/author.interface';
 import { Credentials } from '@routes/auth/services/credentials.interface';
 import { UserToken } from '@routes/auth/services/user-token.interface';
 import { Contact } from '@routes/contact/contact.interface';
+import { Post } from '@routes/posts/post.interface';
 
 import { API_URL } from './token.providers';
 
@@ -28,5 +29,9 @@ export class ApiService {
 
   postLogin$(loginCredentials: Pick<Credentials, 'email' | 'password'>) {
     return this.http.post<UserToken>(`${this.url}/login`, loginCredentials);
+  }
+
+  postPost$(post: Post) {
+    return this.http.post<Post>(`${this.url}/posts`, post);
   }
 }

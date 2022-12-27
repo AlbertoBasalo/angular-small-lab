@@ -202,6 +202,12 @@ ng g s routes/posts/editor/editor
 ng g c routes/posts/editor/content --flat --selector=lab-content-view --type=view
 ```
 
+## 2️⃣7️⃣ save post to api
+
+```bash
+ng g i routes/posts/post --type=interface
+```
+
 ---
 
 By [Alberto Basalo](https://twitter.com/AlbertoBasalo)

@@ -18,12 +18,16 @@ export const APP_ROUTES: Route[] = [
     loadComponent: () => import('./routes/contact/contact.page'),
   },
   {
-    path: 'posts/editor/:id',
-    loadComponent: () => import('./routes/posts/editor/editor.page'),
+    path: 'activities/editor/:id',
+    loadComponent: () => import('./routes/activities/editor/editor.page'),
   },
   {
     path: 'auth',
     loadChildren: () =>
       import('./routes/auth/routes/auth.routes').then((m) => m.AUTH_ROUTES),
+  },
+  {
+    path: 'posts/editor/:id',
+    loadComponent: () => import('./routes/posts/editor/editor.page'),
   },
 ];

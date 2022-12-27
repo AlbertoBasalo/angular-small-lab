@@ -188,24 +188,25 @@ npm run e2e
 
 ---
 
-## 2️⃣5️⃣ feature post editor
+## 2️⃣5️⃣ feature activity editor
 
 ```bash
-ng g c routes/posts/editor --type=page --skip-selector
+ng g c routes/activities/editor --type=page --skip-selector
+ng g c routes/activities/editor/editor --flat --selector=lab-editor-form --type=form
+ng g s routes/activities/editor/editor
+ng g i routes/activities/activity --type=interface
 ```
 
 ## 2️⃣6️⃣ refactor to components and services
 
 ```bash
-ng g c routes/posts/editor/editor --flat --selector=lab-editor-form --type=form
-ng g s routes/posts/editor/editor
-ng g c routes/posts/editor/content --flat --selector=lab-content-view --type=view
+
 ```
 
 ## 2️⃣7️⃣ save post to api
 
 ```bash
-ng g i routes/posts/post --type=interface
+
 ```
 
 ---

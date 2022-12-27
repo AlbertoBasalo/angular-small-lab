@@ -1,17 +1,17 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Activity } from '../activity.interface';
-import { EditorForm } from './editor.form';
-import { EditorService } from './editor.service';
+import { ActivitiesService } from './activities.service';
+import { ActivityForm } from './activity.form';
+import { Activity } from './activity.interface';
 
 @Component({
   standalone: true,
-  imports: [EditorForm],
-  template: ` <lab-editor-form (save)="onSave($event)"></lab-editor-form> `,
+  imports: [ActivityForm],
+  template: ` <lab-activity-form (save)="onSave($event)"></lab-activity-form> `,
   styles: [],
 })
-export default class EditorPage {
-  service = inject(EditorService);
+export default class ActivityCreatePage {
+  service = inject(ActivitiesService);
   router = inject(Router);
   onSave(activity: Activity) {
     this.service

@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
-import { AuthService } from '@routes/auth/services/auth.service';
-import { ApiService } from '@srv/api.service';
+import { RestService } from '@srv/rest.service';
+import { UtilsService } from '@srv/utils.service';
 import { Marked } from '@ts-stack/markdown';
 import { Post } from '../post.interface';
 
@@ -8,8 +8,8 @@ import { Post } from '../post.interface';
   providedIn: 'root',
 })
 export class EditorService {
-  authService = inject(AuthService);
-  apiService = inject(ApiService);
+  restService = new RestService<Post>('posts');
+  utilsService = inject(UtilsService);
 
   transform(markdown: string) {
     const html = Marked.parse(markdown);
@@ -17,23 +17,12 @@ export class EditorService {
   }
 
   publish(title: string, markdown: string) {
-    const slug = this.slugify(title);
-    const author = this.authService.userToken.user.id.toString();
+    const slug = this.utilsService.slugify(title);
     const newPost: Post = {
       slug,
       title,
       markdown,
-      author,
     };
-    this.apiService.postPost$(newPost).subscribe((post) => {});
-  }
-
-  slugify(original: string) {
-    return original
-      .toLowerCase()
-      .trim()
-      .replace(/[^\w\s-]/g, '')
-      .replace(/[\s_-]+/g, '-')
-      .replace(/^-+|-+$/g, '');
+    this.restService.post$(newPost).subscribe((post) => {});
   }
 }

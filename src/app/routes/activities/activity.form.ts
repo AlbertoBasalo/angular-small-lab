@@ -6,10 +6,10 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Activity } from '../activity.interface';
+import { Activity } from './activity.interface';
 
 @Component({
-  selector: 'lab-editor-form',
+  selector: 'lab-activity-form',
   standalone: true,
   imports: [ReactiveFormsModule],
   template: `
@@ -60,13 +60,13 @@ import { Activity } from '../activity.interface';
         placeholder="Max participants"
         [attr.aria-invalid]="hasError('maxParticipants')"
       />
-      <input
+      <!-- <input
         id="paymentMethod"
         name="paymentMethod"
         formControlName="paymentMethod"
         placeholder="Payment method"
         [attr.aria-invalid]="hasError('paymentMethod')"
-      />
+      /> -->
       <input
         id="adultsOnly"
         name="adultsOnly"
@@ -86,7 +86,7 @@ import { Activity } from '../activity.interface';
   `,
   styles: [],
 })
-export class EditorForm {
+export class ActivityForm {
   @Output() save = new EventEmitter<Activity>();
 
   form: FormGroup = inject(FormBuilder).group({

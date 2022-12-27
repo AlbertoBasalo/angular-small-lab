@@ -1,7 +1,7 @@
-export interface Activity {
-  id?: string;
+import { Rest } from '@srv/rest.interface';
+
+export interface Activity extends Rest {
   slug?: string;
-  ownerId?: string;
   title: string;
   description: string;
   date: Date;

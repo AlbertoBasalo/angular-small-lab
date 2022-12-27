@@ -12,7 +12,7 @@ ng new angular-small-lab -p=lab -S -s -t
 ## 2️⃣ Add Standalone Components
 
 ```bash
-ng g c ui/components/link --flat --standalone
+ng g c interface/link --flat --standalone
 # Import the LinkComponent at AppComponent
 # CSS optional framework
 npm install @picocss/pico
@@ -79,7 +79,7 @@ ng g s routes/contact/contact
 
 ```bash
 # provide httpClient on main bootstrap
-ng g s core/api
+ng g s services/api
 # get author information
 ```
 
@@ -92,8 +92,8 @@ ng g s core/api
 ## 1️⃣2️⃣ core layout sections
 
 ```bash
-ng g c core/header --flat --selector=lab-header-section  --type=section
-ng g c core/footer --flat --selector=lab-footer-section  --type=section
+ng g c interface/header --flat --selector=lab-header-section  --type=section
+ng g c interface/footer --flat --selector=lab-footer-section  --type=section
 ```
 
 ## 1️⃣3️⃣ error interceptor
@@ -197,22 +197,21 @@ ng g s routes/activities/editor/editor
 ng g i routes/activities/activity --type=interface
 ```
 
-## 2️⃣6️⃣ refactor to components and services
+## 2️⃣6️⃣ refactor with utils service and crud api
 
 ```bash
-
+ng g s services/utils
+ng g s services/rest
 ```
 
-## 2️⃣7️⃣ save post to api
+````
+
+## 2️⃣7️⃣ feature activity viewer
 
 ```bash
-
-```
+ng g c routes/activities/view --type=page --skip-selector
+````
 
 ---
 
 By [Alberto Basalo](https://twitter.com/AlbertoBasalo)
-
-```
-
-```

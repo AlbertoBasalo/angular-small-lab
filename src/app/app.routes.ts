@@ -18,8 +18,12 @@ export const APP_ROUTES: Route[] = [
     loadComponent: () => import('./routes/contact/contact.page'),
   },
   {
-    path: 'activities/editor/:id',
-    loadComponent: () => import('./routes/activities/editor/editor.page'),
+    path: 'activities/create',
+    loadComponent: () => import('./routes/activities/activity-create.page'),
+  },
+  {
+    path: 'activities/:slug',
+    loadComponent: () => import('./routes/activities/activity.page'),
   },
   {
     path: 'auth',

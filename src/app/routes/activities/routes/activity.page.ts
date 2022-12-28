@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ActivitiesService } from './activities.service';
-import { Activity } from './activity.interface';
-import { ActivityView } from './activity.view';
+import { ActivityView } from '../interface/activity.view';
+import { ActivitiesService } from '../services/activities.service';
+import { Activity } from '../services/activity.interface';
 
 @Component({
   standalone: true,
@@ -16,7 +16,8 @@ export default class ActivityPage implements OnInit {
   slug = this.activatedRoute.snapshot.paramMap.get('slug') || '';
   activity!: Activity;
   ngOnInit() {
-    this.service.getBySlug(this.slug).subscribe((activity) => {
+    this.service.getBySlug(this.slug).subscribe((activities) => {
+      const activity = activities[0];
       this.activity = activity;
     });
   }

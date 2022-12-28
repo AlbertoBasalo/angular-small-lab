@@ -18,20 +18,15 @@ export const APP_ROUTES: Route[] = [
     loadComponent: () => import('./routes/contact/contact.page'),
   },
   {
-    path: 'activities/create',
-    loadComponent: () => import('./routes/activities/activity-create.page'),
-  },
-  {
-    path: 'activities/:slug',
-    loadComponent: () => import('./routes/activities/activity.page'),
+    path: 'activities',
+    loadChildren: () =>
+      import('./routes/activities/activities.routes').then(
+        (m) => m.ACTIVITIES_ROUTES
+      ),
   },
   {
     path: 'auth',
     loadChildren: () =>
-      import('./routes/auth/routes/auth.routes').then((m) => m.AUTH_ROUTES),
-  },
-  {
-    path: 'posts/editor/:id',
-    loadComponent: () => import('./routes/posts/editor/editor.page'),
+      import('./routes/auth/auth.routes').then((m) => m.AUTH_ROUTES),
   },
 ];

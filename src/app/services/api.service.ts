@@ -1,10 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Author } from '@routes/about/author.interface';
-import { Credentials } from '@routes/auth/services/credentials.interface';
-import { UserToken } from '@routes/auth/services/user-token.interface';
-import { Contact } from '@routes/contact/contact.interface';
-
 import { API_URL } from './token.providers';
 
 @Injectable({
@@ -14,19 +9,23 @@ export class ApiService {
   url = inject(API_URL);
   http = inject(HttpClient);
 
-  getAuthor$() {
-    return this.http.get<Author>(`${this.url}/author`);
+  getAll$<T>(resource: string) {
+    return this.http.get<T[]>(`${this.url}/${resource}`);
   }
 
-  postContact$(contact: Contact) {
-    return this.http.post<Contact>(`${this.url}/contacts`, contact);
+  getById$<T>(resource: string, id: string = '') {
+    return this.http.get<T>(`${this.url}/${resource}/${id}`);
   }
 
-  postUser$(userCredentials: Omit<Credentials, 'confirmPassword'>) {
-    return this.http.post<UserToken>(`${this.url}/users`, userCredentials);
+  getByQuery$<T>(resource: string, query: string) {
+    return this.http.get<T>(`${this.url}/${resource}?${query}`);
   }
 
-  postLogin$(loginCredentials: Pick<Credentials, 'email' | 'password'>) {
-    return this.http.post<UserToken>(`${this.url}/login`, loginCredentials);
+  post$<T>(resource: string, payload: unknown) {
+    return this.http.post<T>(`${this.url}/${resource}`, payload);
+  }
+
+  put$<T>(resource: string, id: string, payload: Partial<T>) {
+    return this.http.put<T>(`${this.url}/${resource}/${id}`, payload);
   }
 }

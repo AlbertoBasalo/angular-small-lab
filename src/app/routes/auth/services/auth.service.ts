@@ -30,13 +30,13 @@ export class AuthService {
   register$(credentials: Credentials) {
     const { confirmPassword, ...userCredentials } = credentials;
     return this.apiService
-      .postUser$(userCredentials)
+      .post$<UserToken>('users', userCredentials)
       .pipe(this.processUserToken);
   }
   logIn$(credentials: Credentials) {
     const { name, confirmPassword, ...loginCredentials } = credentials;
     return this.apiService
-      .postLogin$(loginCredentials)
+      .post$<UserToken>('login', loginCredentials)
       .pipe(this.processUserToken);
   }
   logOut() {

@@ -8,6 +8,6 @@ import { Contact } from './contact.interface';
 export class ContactService {
   api: ApiService = inject(ApiService);
   post$(contact: Contact) {
-    return this.api.postContact$(contact);
+    return this.api.post$<Contact>('contacts', contact);
   }
 }

@@ -1,6 +1,6 @@
-import { Rest } from '@srv/rest.interface';
-
-export interface Activity extends Rest {
+export interface Activity {
+  id?: number;
+  userId?: number;
   slug?: string;
   title: string;
   description: string;
@@ -8,6 +8,5 @@ export interface Activity extends Rest {
   location: string;
   price: number;
   maxParticipants: number;
-  paymentMethod: string;
-  adultsOnly: boolean;
+  ageCategory: 'adult' | 'child' | 'family';
 }

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { UtilsService } from '@srv/utils.service';
-import { Activity } from './activity.interface';
+import { Activity } from '../services/activity.interface';
 
 @Component({
   selector: 'lab-activity-view',

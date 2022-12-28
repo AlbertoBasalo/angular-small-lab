@@ -191,17 +191,22 @@ npm run e2e
 ## 2️⃣5️⃣ feature activity editor
 
 ```bash
-ng g c routes/activities/editor --type=page --skip-selector
-ng g c routes/activities/editor/editor --flat --selector=lab-editor-form --type=form
-ng g s routes/activities/editor/editor
-ng g i routes/activities/activity --type=interface
+ng g c routes/activities/routes/activities --type=page --skip-selector
+ng g c routes/activities/routes/activity-create --type=page --skip-selector
+ng g c routes/activities/routes/activity-update --type=page --skip-selector
+ng g c routes/activities/routes/activity --type=page --skip-selector
+
+ng g c routes/activities/interfaces/activity --flat --selector=lab-activity-form --type=form
+ng g c routes/activities/interfaces/activity --flat --selector=lab-activity-view --type=view
+
+ng g s routes/activities/services/activities
+ng g i routes/activities/services/activity --type=interface
 ```
 
-## 2️⃣6️⃣ refactor with utils service and crud api
+## 2️⃣6️⃣ refactor with utils service and api
 
 ```bash
 ng g s services/utils
-ng g s services/rest
 ```
 
 ````

@@ -6,7 +6,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Activity } from './activity.interface';
+import { Activity } from '../services/activity.interface';
 
 @Component({
   selector: 'lab-activity-form',
@@ -60,13 +60,6 @@ import { Activity } from './activity.interface';
         placeholder="Max participants"
         [attr.aria-invalid]="hasError('maxParticipants')"
       />
-      <!-- <input
-        id="paymentMethod"
-        name="paymentMethod"
-        formControlName="paymentMethod"
-        placeholder="Payment method"
-        [attr.aria-invalid]="hasError('paymentMethod')"
-      /> -->
       <input
         id="adultsOnly"
         name="adultsOnly"
@@ -121,7 +114,7 @@ export class ActivityForm {
     maxParticipants: new FormControl<number>(0, {
       nonNullable: true,
     }),
-    adultsOnly: new FormControl<boolean>(false, {
+    ageCategory: new FormControl<string>('family', {
       nonNullable: true,
     }),
     price: new FormControl<number>(0, {

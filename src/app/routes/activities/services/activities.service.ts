@@ -1,26 +1,30 @@
 import { inject, Injectable } from '@angular/core';
-import { RestService } from '@srv/rest.service';
+import { AuthService } from '@routes/auth/services/auth.service';
+import { ApiService } from '@srv/api.service';
 import { UtilsService } from '@srv/utils.service';
-import { map } from 'rxjs';
 import { Activity } from './activity.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ActivitiesService {
-  restService = new RestService<Activity>('activities');
+  apiService = inject(ApiService);
+  authService = inject(AuthService);
   utilsService = inject(UtilsService);
   save(activity: Omit<Activity, 'slug' | 'ownerId'>) {
     const slug = this.utilsService.slugify(activity.title || '');
+    const userId = this.authService.userToken.user.id;
     const newActivity: Activity = {
+      userId,
       slug,
       ...activity,
     };
-    return this.restService.post$(newActivity);
+    return this.apiService.post$<Activity>('activities', newActivity);
   }
   getBySlug(slug: string) {
-    return this.restService
-      .getByQuery$(`slug=${slug}`)
-      .pipe(map((activities) => activities[0]));
+    return this.apiService.getByQuery$<Activity[]>(
+      'activities',
+      `slug=${slug}`
+    );
   }
 }

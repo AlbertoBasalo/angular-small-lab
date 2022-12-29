@@ -1,0 +1,14 @@
+[
+  {
+    "ageCategory": "Only Adults",
+    "date": "2025-01-01",
+    "description": "## Rafting at the Grand Canyon\r\n Experience the **adrenaline** in this _natural beast_.",
+    "id": 1,
+    "location": "Grand canyon",
+    "maxParticipants": 10,
+    "price": 100,
+    "slug": "grand-canyon-rafting",
+    "title": "Grand canyon rafting",
+    "userId": 1
+  }
+]

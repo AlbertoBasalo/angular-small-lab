@@ -14,7 +14,6 @@ import { Activity } from '../services/activity.interface';
       </header>
       <div id="html" [innerHTML]="html"></div>
     </article>
-    >
   `,
   styles: [],
 })

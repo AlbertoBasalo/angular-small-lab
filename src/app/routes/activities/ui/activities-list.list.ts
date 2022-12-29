@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgFor } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { Activity } from '@routes/activities/services/activity.interface';
 
 @Component({
   selector: 'lab-activities-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgFor, RouterLink],
   template: `
-    <p>
-      activities-list works!
-    </p>
+    <ul>
+      <li *ngFor="let activity of activities">
+        <a routerLink="/activities/{{ activity.slug }}">{{ activity.title }}</a>
+      </li>
+    </ul>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class ActivitiesListList {
-
+  @Input() activities: Activity[] = [];
 }

@@ -11,6 +11,9 @@ export class ActivitiesService {
   apiService = inject(ApiService);
   authService = inject(AuthService);
   utilsService = inject(UtilsService);
+  getActivities$() {
+    return this.apiService.getAll$<Activity>('activities');
+  }
   save(activity: Omit<Activity, 'slug' | 'ownerId'>) {
     const slug = this.utilsService.slugify(activity.title || '');
     const userId = this.authService.userToken.user.id;

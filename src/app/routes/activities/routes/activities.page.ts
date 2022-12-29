@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ActivitiesService } from '@routes/activities/services/activities.service';
+import { Activity } from '@routes/activities/services/activity.interface';
 import { ActivitiesListList } from '../ui/activities-list.list';
 
 @Component({
@@ -13,7 +15,15 @@ import { ActivitiesListList } from '../ui/activities-list.list';
         </ul>
       </nav>
     </header>
-    <lab-activities-list></lab-activities-list>
+    <lab-activities-list [activities]="activities"> </lab-activities-list>
   `,
 })
-export default class ActivitiesPage {}
+export default class ActivitiesPage implements OnInit {
+  activitiesService = inject(ActivitiesService);
+  activities: Activity[] = [];
+  ngOnInit() {
+    this.activitiesService.getActivities$().subscribe((activities) => {
+      this.activities = activities;
+    });
+  }
+}

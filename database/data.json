@@ -8,24 +8,24 @@
   },
   "contacts": [
     {
-      "name": "Alberto Basalo",
       "email": "alberto@fake.mail",
+      "id": 1,
       "message": "Hello, world!",
-      "id": 1
+      "name": "Alberto Basalo"
     },
     {
-      "name": "Alberto Basalo",
       "email": "alberto@fake.mail",
+      "id": 2,
       "message": "Hello, world!",
-      "id": 2
+      "name": "Alberto Basalo"
     }
   ],
   "users": [
     {
       "email": "bill@musk.meta",
-      "password": "$2a$10$Pp00lMmvIHbGRe018SXAOuRi7svaq1bs3qZN.8o6CuWjRHUv3anC6",
+      "id": 1,
       "name": "Bill Musk",
-      "id": 1
+      "password": "$2a$10$Pp00lMmvIHbGRe018SXAOuRi7svaq1bs3qZN.8o6CuWjRHUv3anC6"
     }
   ]
 }

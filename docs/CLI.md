@@ -211,13 +211,11 @@ ng g i routes/activities/services/activity --type=interface
 ng g s services/utils
 ```
 
-````
-
 ## 2️⃣7️⃣ feature activity details
 
 ```bash
 ng g c routes/activities/routes/activity-details --type=page --skip-selector
-````
+```
 
 ---
 

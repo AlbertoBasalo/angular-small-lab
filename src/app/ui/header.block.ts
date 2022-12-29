@@ -21,7 +21,7 @@ import { UserToken } from '@routes/auth/services/user-token.interface';
               <a routerLink="/admin">👔 Admin</a>
             </li>
             <li>
-              <a routerLink="/activities/create">✍🏼 New Activity</a>
+              <a routerLink="/activities">🚞 Activities</a>
             </li>
             <li>
               <span name="userName">🖖🏼 Hi {{ userToken.user.name }}</span>

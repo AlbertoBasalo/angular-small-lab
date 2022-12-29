@@ -60,14 +60,17 @@ import { Activity } from '../services/activity.interface';
         placeholder="Max participants"
         [attr.aria-invalid]="hasError('maxParticipants')"
       />
-      <input
-        id="adultsOnly"
-        name="adultsOnly"
-        type="checkbox"
-        formControlName="adultsOnly"
-        placeholder="Adults only"
-        [attr.aria-invalid]="hasError('adultsOnly')"
-      />
+      <select
+        id="ageCategory"
+        name="ageCategory"
+        formControlName="ageCategory"
+        [attr.aria-invalid]="hasError('ageCategory')"
+      >
+        <option value="family">Whole Family</option>
+        <option value="adults">Only Adults</option>
+        <option value="kids">Just for Kids</option>
+      </select>
+
       <button
         id="submit"
         [disabled]="form.invalid"

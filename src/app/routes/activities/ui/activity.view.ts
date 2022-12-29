@@ -22,6 +22,7 @@ export class ActivityView {
   utilsService = inject(UtilsService);
   _activity!: Activity;
   @Input() set activity(activity: Activity) {
+    if (!activity) return;
     this._activity = activity;
     this.html = this.utilsService.transformToHtml(activity.description);
   }

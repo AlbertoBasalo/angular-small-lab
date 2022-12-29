@@ -21,6 +21,7 @@ describe('The activities editor page', () => {
     cy.get('input[name="maxParticipants"]')
       .clear()
       .type(newActivity.maxParticipants);
+    cy.get('select[name="ageCategory"]').select(newActivity.ageCategory);
     cy.get('#submit').should('not.be.disabled');
     const response = {
       statusCode: 201,

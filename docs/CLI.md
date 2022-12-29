@@ -217,6 +217,12 @@ ng g s services/utils
 ng g c routes/activities/routes/activity-details --type=page --skip-selector
 ```
 
+## 2️⃣8️⃣ feature activity list
+
+```bash
+ng g c routes/activities/ui/activities-list --flat --selector=lab-activities-list --type=list
+```
+
 ---
 
 By [Alberto Basalo](https://twitter.com/AlbertoBasalo)

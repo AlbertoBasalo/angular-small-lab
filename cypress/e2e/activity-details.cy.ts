@@ -15,7 +15,22 @@ describe('The activities editor page', () => {
     });
   });
 
-  it('should display the activity list', () => {
-    cy.get('h1').should('contain', activities[0].title);
+  it('should display the activity ', () => {
+    cy.wait('@get_activities');
+    cy.get('header').should('contain', activities[0].title);
+  });
+  it('should fill the participant form', () => {
+    cy.fixture('participant').then((data) => {
+      const participant = data;
+      cy.get('input[name="name"]').clear().type(participant.name);
+      cy.get('input[name="email"]').clear().type(participant.email);
+      cy.get('input[name="phone"]').clear().type(participant.phone);
+      cy.get('input[name="address"]').clear().type(participant.address);
+      cy.get('input[name="paymentMethod"]')
+        .clear()
+        .type(participant.paymentMethod);
+      cy.get('#acceptConditions').click();
+      cy.get('[type="submit"]').click();
+    });
   });
 });

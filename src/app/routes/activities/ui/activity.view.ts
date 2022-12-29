@@ -10,7 +10,7 @@ import { Activity } from '../services/activity.interface';
   template: `
     <article *ngIf="_activity">
       <header>
-        <h1>{{ _activity.title }}</h1>
+        <strong>{{ _activity.title }}</strong>
       </header>
       <div id="html" [innerHTML]="html"></div>
     </article>

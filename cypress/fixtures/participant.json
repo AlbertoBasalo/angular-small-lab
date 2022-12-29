@@ -1,0 +1,8 @@
+{
+  "acceptConditions": true,
+  "address": "1234 Main St, San Francisco, CA 94105",
+  "email": "tim@bezoos.me",
+  "name": "Tim Bezzos",
+  "paymentMethod": "Visa",
+  "phone": "+1 (415) 555-5555"
+}

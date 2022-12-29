@@ -223,6 +223,12 @@ ng g c routes/activities/routes/activity-details --type=page --skip-selector
 ng g c routes/activities/ui/activities-list --flat --selector=lab-activities-list --type=list
 ```
 
+## 2️⃣9️⃣ feature activity partificpant form
+
+```bash
+ng g c routes/activities/ui/activity-participant --flat --selector=lab-activity-participant-form --type=form
+```
+
 ---
 
 By [Alberto Basalo](https://twitter.com/AlbertoBasalo)

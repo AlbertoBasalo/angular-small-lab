@@ -2,18 +2,18 @@ import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AuthService } from '@routes/auth/services/auth.service';
 import { UserToken } from '@routes/auth/services/user-token.interface';
-import { FooterSection } from '@ui/footer.section';
-import { HeaderSection } from '@ui/header.section';
+import { FooterBlock } from '@ui/footer.block';
+import { HeaderBlock } from '@ui/header.block';
 
 @Component({
   selector: 'lab-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderSection, FooterSection],
+  imports: [RouterOutlet, HeaderBlock, FooterBlock],
   template: `
-    <lab-header-section [title]="title" [userToken]="userToken">
-    </lab-header-section>
+    <lab-header-block [title]="title" [userToken]="userToken">
+    </lab-header-block>
     <router-outlet></router-outlet>
-    <lab-footer-section></lab-footer-section>
+    <lab-footer-block></lab-footer-block>
   `,
 })
 export class AppComponent {

@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { UserToken } from '@routes/auth/services/user-token.interface';
 
 @Component({
-  selector: 'lab-header-section',
+  selector: 'lab-header-block',
   standalone: true,
   imports: [NgIf, RouterLink],
   template: `
@@ -40,7 +40,7 @@ import { UserToken } from '@routes/auth/services/user-token.interface';
     </header>
   `,
 })
-export class HeaderSection {
+export class HeaderBlock {
   @Input() title = '';
   @Input() userToken: UserToken | null = null;
 }

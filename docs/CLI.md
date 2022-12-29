@@ -12,7 +12,7 @@ ng new angular-small-lab -p=lab -S -s -t
 ## 2️⃣ Add Standalone Components
 
 ```bash
-ng g c interface/link --flat --standalone
+ng g c ui/link --flat --standalone
 # Import the LinkComponent at AppComponent
 # CSS optional framework
 npm install @picocss/pico
@@ -23,7 +23,7 @@ npm install @picocss/pico
 ```bash
 ng g c routes/home --type=page --skip-selector
 # Create a new app.routes.ts file
-# Add router providers on main.ts
+# Add it to router providers on main.ts
 ```
 
 ## 4️⃣ Add lazy component
@@ -57,7 +57,8 @@ ng g c routes/about/author --flat --type=view --selector=lab-author-view
 ```bash
 # generate a page and a form presenter component for a contact route
 ng g c routes/contact --type=page --skip-selector
-ng g c routes/contact --type=form --selector=lab-contact-form
+ng g c routes/contact --flat --type=form --selector=lab-contact-form
+# add the model interface and the service
 ng g i routes/contact/contact --type=interface
 ng g s routes/contact/contact
 ```
@@ -89,11 +90,11 @@ ng g s services/api
 # post the contact request data
 ```
 
-## 1️⃣2️⃣ core layout sections
+## 1️⃣2️⃣ component clocks for core layout sections
 
 ```bash
-ng g c interface/header --flat --selector=lab-header-section  --type=section
-ng g c interface/footer --flat --selector=lab-footer-section  --type=section
+ng g c ui/header --flat --selector=lab-header-block  --type=block
+ng g c ui/footer --flat --selector=lab-footer-block  --type=block
 ```
 
 ## 1️⃣3️⃣ error interceptor
@@ -106,31 +107,31 @@ main
 ## 1️⃣4️⃣ inject function token
 
 ```bash
-api.interceptor.ts
+services/api.interceptor.ts
 main
 ```
 
-## 1️⃣5️⃣ auth routes
+## 1️⃣5️⃣ auth routes nested branch
 
 ```bash
-ng g c routes/auth/register --flat --type=page --skip-selector
-ng g c routes/auth/login --flat --type=page --skip-selector
+ng g c routes/auth/routes/register --flat --type=page --skip-selector
+ng g c routes/auth/routes/login --flat --type=page --skip-selector
 auth.routes.ts
 app.routes.ts
 ```
 
-## 1️⃣6️⃣ same form
+## 1️⃣6️⃣ add data model and the same form for both routes
 
 ```bash
-ng g c routes/auth/credentials --flat --selector=lab-credentials-form --type=form
-ng g i routes/auth/credentials --type=interface
+ng g c routes/auth/ui/credentials --flat --selector=lab-credentials-form --type=form
+ng g i routes/auth/services/credentials --type=interface
 ```
 
 ## 1️⃣6️⃣ auth service
 
 ```bash
 npm i json-server-auth
-ng g s routes/auth/auth
+ng g s routes/auth/services/auth
 ```
 
 ## 1️⃣7️⃣ typescript utility types
@@ -155,17 +156,17 @@ ng g s routes/auth/auth
 
 ```bash
 ng g c routes/admin --type=page --skip-selector
-ng g i routes/auth/userToken --type=interface
+ng g i routes/auth/services/userToken --type=interface
 
 ```
 
 ## 2️⃣1️⃣ guards
 
 ```bash
-# src\app\routes\auth\auth.guard.ts
+# src\app\routes\auth\services\auth.guard.ts
 ```
 
-## 2️⃣2️⃣ auth interceptor
+## 2️⃣2️⃣ auth interception on api interceptor
 
 ```bash
 
@@ -174,9 +175,9 @@ ng g i routes/auth/userToken --type=interface
 ## 2️⃣3️⃣ folder tiering
 
 ```bash
-# 🧳 interface
+# 🚗 ui
 # 🛣️ routes
-# 🚗 services
+# ⚙️ services
 ```
 
 ## 2️⃣4️⃣ cypres e2e tests
@@ -184,6 +185,7 @@ ng g i routes/auth/userToken --type=interface
 ```bash
 ng add @cypress/schematic
 npm run e2e
+npm test
 ```
 
 ---
@@ -194,10 +196,10 @@ npm run e2e
 ng g c routes/activities/routes/activities --type=page --skip-selector
 ng g c routes/activities/routes/activity-create --type=page --skip-selector
 ng g c routes/activities/routes/activity-update --type=page --skip-selector
-ng g c routes/activities/routes/activity --type=page --skip-selector
 
-ng g c routes/activities/interfaces/activity --flat --selector=lab-activity-form --type=form
-ng g c routes/activities/interfaces/activity --flat --selector=lab-activity-view --type=view
+
+ng g c routes/activities/ui/activity --flat --selector=lab-activity-form --type=form
+ng g c routes/activities/ui/activity --flat --selector=lab-activity-view --type=view
 
 ng g s routes/activities/services/activities
 ng g i routes/activities/services/activity --type=interface
@@ -211,10 +213,10 @@ ng g s services/utils
 
 ````
 
-## 2️⃣7️⃣ feature activity viewer
+## 2️⃣7️⃣ feature activity details
 
 ```bash
-ng g c routes/activities/view --type=page --skip-selector
+ng g c routes/activities/routes/activity-details --type=page --skip-selector
 ````
 
 ---

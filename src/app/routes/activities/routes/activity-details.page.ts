@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ActivityView } from '../interface/activity.view';
 import { ActivitiesService } from '../services/activities.service';
 import { Activity } from '../services/activity.interface';
+import { ActivityView } from '../ui/activity.view';
 
 @Component({
   standalone: true,
@@ -10,7 +10,7 @@ import { Activity } from '../services/activity.interface';
   template: `<lab-activity-view [activity]="activity"></lab-activity-view>`,
   styles: [],
 })
-export default class ActivityPage implements OnInit {
+export default class ActivityDetailsPage implements OnInit {
   activatedRoute = inject(ActivatedRoute);
   service = inject(ActivitiesService);
   slug = this.activatedRoute.snapshot.paramMap.get('slug') || '';

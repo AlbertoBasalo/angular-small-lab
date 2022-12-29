@@ -16,7 +16,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "ng e2e",
     "api": "json-server-auth --watch ./database/data.json --routes ./database/routes.json",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",

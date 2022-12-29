@@ -4,7 +4,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@ui/*": ["src/app/interface/*"],
+      "@ui/*": ["src/app/ui/*"],
       "@routes/*": ["src/app/routes/*"],
       "@srv/*": ["src/app/services/*"]
     },

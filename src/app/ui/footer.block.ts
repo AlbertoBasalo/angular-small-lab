@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { LinkComponent } from './link.component';
 
 @Component({
-  selector: 'lab-footer-section',
+  selector: 'lab-footer-block',
   standalone: true,
   imports: [CommonModule, LinkComponent, RouterLink],
   template: `
@@ -28,7 +28,7 @@ import { LinkComponent } from './link.component';
   `,
   styles: [],
 })
-export class FooterSection {
+export class FooterBlock {
   year = new Date().getFullYear();
   repoUrl = 'https://github.com/AlbertoBasalo/angular-small-lab';
 }

@@ -1,17 +1,10 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <p>
-      activities works!
-    </p>
-  `,
-  styles: [
-  ]
+  template: ` <p>activities works!</p> `,
+  styles: [],
 })
-export class ActivitiesPage {
-
-}
+export default class ActivitiesPage {}

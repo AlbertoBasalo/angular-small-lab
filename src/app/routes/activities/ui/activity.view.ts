@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { UtilsService } from '@srv/utils.service';
 import { Activity } from '../services/activity.interface';
@@ -6,9 +6,9 @@ import { Activity } from '../services/activity.interface';
 @Component({
   selector: 'lab-activity-view',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgIf],
   template: `
-    <article>
+    <article *ngIf="_activity">
       <header>
         <h1>{{ _activity.title }}</h1>
       </header>

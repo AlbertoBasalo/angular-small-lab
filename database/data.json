@@ -8,35 +8,23 @@
   },
   "contacts": [
     {
+      "name": "Alberto Basalo",
       "email": "alberto@fake.mail",
-      "id": 1,
-      "message": "I want to use Angular standalone APIs on 2023!",
-      "name": "Alberto Basalo"
-    },
-    {
-      "email": "alberto@fake.mail",
-      "id": 2,
-      "message": "I want to use Angular standalone APIs on 2023!",
-      "name": "Alberto Basalo"
-    },
-    {
-      "email": "alberto@fake.mail",
-      "id": 3,
-      "message": "I want to use Angular standalone APIs on 2023!",
-      "name": "Alberto Basalo"
+      "message": "Hello, world!",
+      "id": 1
     },
     {
       "name": "Alberto Basalo",
       "email": "alberto@fake.mail",
       "message": "Hello, world!",
-      "id": 4
+      "id": 2
     }
   ],
   "users": [
     {
-      "email": "elon@mars.com",
-      "password": "$2a$10$PtZWpaAUdyz1YdLrWR0bIOfDKgwgcidwJVTrNR0BvVNKyx0hdNX7q",
-      "name": "Elon",
+      "email": "bill@musk.meta",
+      "password": "$2a$10$Pp00lMmvIHbGRe018SXAOuRi7svaq1bs3qZN.8o6CuWjRHUv3anC6",
+      "name": "Bill Musk",
       "id": 1
     }
   ]

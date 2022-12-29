@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { JsonPipe, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { UserToken } from '@routes/auth/services/user-token.interface';
@@ -6,7 +6,7 @@ import { UserToken } from '@routes/auth/services/user-token.interface';
 @Component({
   selector: 'lab-header-block',
   standalone: true,
-  imports: [NgIf, RouterLink],
+  imports: [NgIf, RouterLink, JsonPipe],
   template: `
     <header>
       <nav>
@@ -24,7 +24,7 @@ import { UserToken } from '@routes/auth/services/user-token.interface';
               <a routerLink="/activities/create">✍🏼 New Activity</a>
             </li>
             <li>
-              <span>🖖🏼 Hi {{ userToken.user.name }}</span>
+              <span name="userName">🖖🏼 Hi {{ userToken.user.name }}</span>
             </li>
           </ng-container>
           <ng-template #noUser>

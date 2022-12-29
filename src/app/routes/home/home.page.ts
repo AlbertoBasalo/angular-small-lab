@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
       <header>
         <h1>Angular Laboratory for <em>small</em> applications</h1>
         <h2>Standalone edition</h2>
+        <h3>Showcase of an Activities portal</h3>
       </header>
       <main>
         <ul>

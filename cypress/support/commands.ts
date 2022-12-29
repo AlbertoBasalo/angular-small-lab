@@ -49,8 +49,9 @@ declare namespace Cypress {
 }
 
 function register(): void {
-  const userToken = `{"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVsb25AbWFycy5jb20iLCJpYXQiOjE2NzE2MTQyMDksImV4cCI6MTY3MTYxNzgwOSwic3ViIjoiMSJ9.qeVXzJ0Vpg7Dk3h9Uq3a7sAXl2XIWOI4llwnEyxYcCo","user":{"email":"santa@northpole.org","name":"Santa Claus","id":1}}`;
-  window.localStorage.setItem('userToken', userToken);
+  cy.fixture('register-user-response').then((userToken) => {
+    window.localStorage.setItem('userToken', JSON.stringify(userToken));
+  });
 }
 
 Cypress.Commands.add('register', register);

@@ -1,0 +1,8 @@
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJpbGxAbXVzay5tZXRhIiwiaWF0IjoxNjcyMzA5NDM5LCJleHAiOjE2NzIzMTMwMzksInN1YiI6IjEifQ.8rYfLChHLG7w9wQMd0_2XyH368k3Q4XJNfxALkXvpgE",
+  "user": {
+    "email": "bill@musk.meta",
+    "id": 1,
+    "name": "Bill Musk"
+  }
+}

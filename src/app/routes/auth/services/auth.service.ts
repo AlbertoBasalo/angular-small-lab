@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from '@srv/api.service';
 import { BehaviorSubject, pipe, tap } from 'rxjs';
+import { AuthStorage } from './auth.storage';
 import { Credentials } from './credentials.interface';
 import { NULL_USER_TOKEN, UserToken } from './user-token.interface';
 
@@ -54,23 +55,5 @@ export class AuthService {
   }
   getLocalUserToken() {
     return this.storage.loadUserToken();
-  }
-}
-
-export class AuthStorage {
-  private readonly key = 'userToken';
-
-  loadUserToken(): UserToken {
-    const storedUserToken = localStorage.getItem(this.key);
-    if (storedUserToken) {
-      return JSON.parse(storedUserToken);
-    }
-    return NULL_USER_TOKEN;
-  }
-  saveUserToken(userToken: UserToken) {
-    localStorage.setItem(this.key, JSON.stringify(userToken));
-  }
-  removeUserToken() {
-    localStorage.removeItem(this.key);
   }
 }

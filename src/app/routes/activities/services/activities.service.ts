@@ -16,13 +16,13 @@ export class ActivitiesService {
   }
   save(activity: Omit<Activity, 'slug' | 'ownerId'>) {
     const slug = this.utilsService.slugify(activity.title || '');
-    const userId = this.authService.userToken.user.id;
+    const userId = this.authService.getUserId();
     const newActivity: Activity = {
       userId,
       slug,
       ...activity,
     };
-    return this.apiService.post$<Activity>('activities', newActivity);
+    return this.apiService.post$<Activity, Activity>('activities', newActivity);
   }
   getBySlug(slug: string) {
     return this.apiService.getByQuery$<Activity[]>(

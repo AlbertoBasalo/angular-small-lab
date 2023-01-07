@@ -6,26 +6,37 @@ import { API_URL } from './token.providers';
   providedIn: 'root',
 })
 export class ApiService {
-  url = inject(API_URL);
+  apiUrl = inject(API_URL);
   http = inject(HttpClient);
 
   getAll$<T>(resource: string) {
-    return this.http.get<T[]>(`${this.url}/${resource}`);
+    return this.http.get<T[]>(this.createUrl({ resource }));
   }
 
   getById$<T>(resource: string, id: string = '') {
-    return this.http.get<T>(`${this.url}/${resource}/${id}`);
+    return this.http.get<T>(this.createUrl({ resource, id }));
   }
 
   getByQuery$<T>(resource: string, query: string) {
-    return this.http.get<T>(`${this.url}/${resource}?${query}`);
+    return this.http.get<T>(this.createUrl({ resource, query }));
   }
 
-  post$<T>(resource: string, payload: unknown) {
-    return this.http.post<T>(`${this.url}/${resource}`, payload);
+  post$<T, K>(resource: string, payload: K) {
+    return this.http.post<T>(this.createUrl({ resource }), payload);
   }
 
   put$<T>(resource: string, id: string, payload: Partial<T>) {
-    return this.http.put<T>(`${this.url}/${resource}/${id}`, payload);
+    return this.http.put<T>(this.createUrl({ resource, id }), payload);
+  }
+  private createUrl(urlParts: UrlParts): string {
+    if (urlParts.id) {
+      return `${this.apiUrl}/${urlParts.resource}/${urlParts.id}`;
+    }
+    if (urlParts.query) {
+      return `${this.apiUrl}/${urlParts.resource}?${urlParts.query}`;
+    }
+    return `${this.apiUrl}/${urlParts.resource}`;
   }
 }
+
+type UrlParts = { resource: string; id?: string; query?: string };

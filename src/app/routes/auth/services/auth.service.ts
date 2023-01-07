@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ApiService } from '@srv/api.service';
 import { BehaviorSubject, pipe, tap } from 'rxjs';
 import { Credentials } from './credentials.interface';
-import { UserToken } from './user-token.interface';
+import { NULL_USER_TOKEN, UserToken } from './user-token.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -11,47 +11,66 @@ import { UserToken } from './user-token.interface';
 export class AuthService {
   apiService = inject(ApiService);
   router = inject(Router);
+  storage = new AuthStorage();
 
-  userToken = this.getLocalUserToken();
-  userToken$ = new BehaviorSubject<UserToken>(this.userToken);
+  userToken$ = new BehaviorSubject<UserToken>(this.getLocalUserToken());
+
   emitUserToken = tap((userToken: UserToken) =>
     this.userToken$.next(userToken)
   );
   saveUserToken = tap((userToken: UserToken) =>
-    localStorage.setItem('userToken', JSON.stringify(userToken))
+    this.storage.saveUserToken(userToken)
   );
   navigateToHome = tap(() => this.router.navigate(['/']));
+
   processUserToken = pipe(
     this.emitUserToken,
     this.saveUserToken,
     this.navigateToHome
   );
 
+  getUserToken() {
+    return this.userToken$.value;
+  }
+  getUserId() {
+    return this.userToken$.value.user.id;
+  }
   register$(credentials: Credentials) {
     const { confirmPassword, ...userCredentials } = credentials;
     return this.apiService
-      .post$<UserToken>('users', userCredentials)
+      .post$<UserToken, Partial<Credentials>>('users', userCredentials)
       .pipe(this.processUserToken);
   }
   logIn$(credentials: Credentials) {
     const { name, confirmPassword, ...loginCredentials } = credentials;
     return this.apiService
-      .post$<UserToken>('login', loginCredentials)
+      .post$<UserToken, Partial<Credentials>>('login', loginCredentials)
       .pipe(this.processUserToken);
   }
   logOut() {
-    localStorage.removeItem('userToken');
-    this.userToken$.next({
-      accessToken: '',
-      user: { id: 0, name: '', email: '' },
-    });
+    this.storage.removeUserToken();
+    this.userToken$.next(NULL_USER_TOKEN);
     this.router.navigate(['/auth/login']);
   }
   getLocalUserToken() {
-    const storedUserToken = localStorage.getItem('userToken');
+    return this.storage.loadUserToken();
+  }
+}
+
+export class AuthStorage {
+  private readonly key = 'userToken';
+
+  loadUserToken(): UserToken {
+    const storedUserToken = localStorage.getItem(this.key);
     if (storedUserToken) {
       return JSON.parse(storedUserToken);
     }
-    return null;
+    return NULL_USER_TOKEN;
+  }
+  saveUserToken(userToken: UserToken) {
+    localStorage.setItem(this.key, JSON.stringify(userToken));
+  }
+  removeUserToken() {
+    localStorage.removeItem(this.key);
   }
 }

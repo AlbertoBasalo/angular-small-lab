@@ -29,8 +29,9 @@ import { Author } from './author.interface';
         </ul>
       </main>
       <footer>
+        <p>To log in use :</p>
         <pre>
-          <p>Login: bill at musk dot meta</p>
+          <p>Email: bill at musk dot meta</p>
           <p>Password: 1234</p>
         </pre>
       </footer>

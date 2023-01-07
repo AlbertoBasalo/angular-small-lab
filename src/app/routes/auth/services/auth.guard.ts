@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 
 export const authGuard: CanActivateFn = () => {
   const authService = inject(AuthService);
-  const isAnonymous = authService.userToken$.value === null;
+  const isAnonymous = authService.getUserId() === 0;
   if (isAnonymous) {
     const router = inject(Router);
     router.navigate(['/auth/login']);

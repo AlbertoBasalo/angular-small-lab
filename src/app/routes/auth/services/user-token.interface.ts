@@ -6,3 +6,8 @@ export interface UserToken {
     email: string;
   };
 }
+
+export const NULL_USER_TOKEN: UserToken = {
+  accessToken: '',
+  user: { id: 0, name: '', email: '' },
+};

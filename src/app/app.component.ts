@@ -19,7 +19,7 @@ import { HeaderBlock } from '@ui/header.block';
 export class AppComponent {
   auth = inject(AuthService);
   title = '🅰️ 🌱 🧫 angular-small-lab';
-  userToken: UserToken | null = null;
+  userToken: UserToken = this.auth.getUserToken();
   constructor() {
     this.auth.userToken$.subscribe((userToken) => (this.userToken = userToken));
   }

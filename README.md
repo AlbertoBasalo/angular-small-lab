@@ -18,9 +18,11 @@ First part of a set of laboratories for applications of different sizes and scop
 
 > a new repository coming soon, with all the features of _small_ plus...
 
-### ♻️ On Push change detection ⌛
+### 🧭 Nested and auxiliar routes ⌛
 
-### 🗃️ Reactive State management ⌛
+### 🥊 On Push change detection ⌛
+
+### ♻️ Reactive State management ⌛
 
 ### 🧪 Component Testing ⌛
 
@@ -31,6 +33,8 @@ First part of a set of laboratories for applications of different sizes and scop
 ### 📚 Libraries on multi-project mono-repo ⌛
 
 ### 👔 Domain logic extracted from Angular details ⌛
+
+### ☣️ Redux with NgRx ⌛
 
 ### 🧪 Unit Testing ⌛
 

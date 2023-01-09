@@ -7,7 +7,7 @@ import { ActivityForm } from '../ui/activity.form';
 @Component({
   standalone: true,
   imports: [ActivityForm],
-  template: ` <lab-activity-form (save)="onSave($event)"></lab-activity-form> `,
+  template: `<lab-activity-form (save)="onSave($event)"></lab-activity-form>`,
   styles: [],
 })
 export default class ActivityCreatePage {
@@ -15,7 +15,7 @@ export default class ActivityCreatePage {
   router = inject(Router);
   onSave(activity: Activity) {
     this.service
-      .save(activity)
+      .save$(activity)
       .subscribe((activity) =>
         this.router.navigate(['/activities', activity.slug])
       );

@@ -19,8 +19,9 @@ describe('The Register Page', () => {
     cy.get('form button[type="submit"]').click();
     const payload = registerUser;
     cy.get('@post_users').its('request.body').should('deep.equal', payload);
-    cy.url().should('include', '/');
-    cy.get('span[name="userName"]').should('include.text', registerUser.name);
     cy.getAllLocalStorage().should('exist');
+    cy.url().should('include', '/');
+    cy.reload();
+    cy.get('span[name="userName"]').should('include.text', registerUser.name);
   });
 });

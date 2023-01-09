@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActivityParticipantForm } from '@routes/activities/ui/activity-participant.form';
+import { UtilsService } from '@srv/utils.service';
 import { Activity } from '../domain/activity.interface';
 import { ActivitiesService } from '../service/activities.service';
 import { ActivityView } from '../ui/activity.view';
@@ -8,24 +9,25 @@ import { ActivityView } from '../ui/activity.view';
 @Component({
   standalone: true,
   imports: [ActivityView, ActivityParticipantForm],
-  template: `<lab-activity-view [activity]="activity"></lab-activity-view>
-    <lab-activity-participant-form
-      (submit)="onSubmit($event)"
-    ></lab-activity-participant-form>`,
+  template: `
+    <lab-activity-view [activity]="activity"></lab-activity-view>
+    <lab-activity-participant-form (addParticipant)="onAddParticipant($event)">
+    </lab-activity-participant-form>
+  `,
   styles: [],
 })
 export default class ActivityDetailsPage implements OnInit {
   activatedRoute = inject(ActivatedRoute);
   service = inject(ActivitiesService);
-  slug = this.activatedRoute.snapshot.paramMap.get('slug') || '';
+  utils = inject(UtilsService);
+  slug = this.utils.getParam(this.activatedRoute, 'slug');
   activity!: Activity;
   ngOnInit() {
-    this.service.getBySlug(this.slug).subscribe((activities) => {
-      const activity = activities[0];
-      this.activity = activity;
+    this.service.getBySlug$(this.slug).subscribe((activities) => {
+      this.activity = activities[0];
     });
   }
-  onSubmit(participant: any) {
+  onAddParticipant(participant: any) {
     console.log('submitted', participant);
   }
 }

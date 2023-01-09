@@ -14,7 +14,7 @@ export class ActivitiesService {
   getActivities$() {
     return this.apiService.getAll$<Activity>('activities');
   }
-  save(activity: Omit<Activity, 'slug' | 'ownerId'>) {
+  save$(activity: Omit<Activity, 'slug' | 'ownerId'>) {
     const slug = this.utilsService.slugify(activity.title || '');
     const userId = this.authService.getUserId();
     const newActivity: Activity = {
@@ -24,7 +24,7 @@ export class ActivitiesService {
     };
     return this.apiService.post$<Activity, Activity>('activities', newActivity);
   }
-  getBySlug(slug: string) {
+  getBySlug$(slug: string) {
     return this.apiService.getByQuery$<Activity[]>(
       'activities',
       `slug=${slug}`

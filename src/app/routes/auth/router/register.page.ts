@@ -15,6 +15,6 @@ import { CredentialsForm } from '../ui/credentials.form';
 export default class RegisterPage {
   authService = inject(AuthService);
   onSend(credentials: Credentials) {
-    this.authService.register$(credentials).subscribe();
+    this.authService.register(credentials);
   }
 }

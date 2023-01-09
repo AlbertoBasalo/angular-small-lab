@@ -21,7 +21,7 @@ export class ApiService {
     return this.http.get<T>(this.createUrl({ resource, query }));
   }
 
-  post$<T, K>(resource: string, payload: K) {
+  post$<T, K_PAYLOAD>(resource: string, payload: K_PAYLOAD) {
     return this.http.post<T>(this.createUrl({ resource }), payload);
   }
 
@@ -29,13 +29,14 @@ export class ApiService {
     return this.http.put<T>(this.createUrl({ resource, id }), payload);
   }
   private createUrl(urlParts: UrlParts): string {
+    const resourceUrl = `${this.apiUrl}/${urlParts.resource}`;
     if (urlParts.id) {
-      return `${this.apiUrl}/${urlParts.resource}/${urlParts.id}`;
+      return `${resourceUrl}/${urlParts.id}`;
     }
     if (urlParts.query) {
-      return `${this.apiUrl}/${urlParts.resource}?${urlParts.query}`;
+      return `${resourceUrl}?${urlParts.query}`;
     }
-    return `${this.apiUrl}/${urlParts.resource}`;
+    return resourceUrl;
   }
 }
 

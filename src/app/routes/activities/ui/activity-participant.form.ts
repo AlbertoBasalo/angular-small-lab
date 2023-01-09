@@ -54,17 +54,17 @@ import {
       </fieldset>
 
       <input
-        type="submit"
+        type="button"
         value="Submit"
         [disabled]="form.invalid"
-        (submit)="submit.next(form.value)"
+        (click)="addParticipant.next(form.value)"
       />
     </form>
   `,
   styles: [],
 })
 export class ActivityParticipantForm {
-  @Output() submit = new EventEmitter<any>();
+  @Output() addParticipant = new EventEmitter<any>();
   formBuilder = inject(FormBuilder);
   form = this.formBuilder.group({
     name: new FormControl('', [Validators.required]),

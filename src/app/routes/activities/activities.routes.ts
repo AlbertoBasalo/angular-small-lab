@@ -3,19 +3,19 @@ import { Route } from '@angular/router';
 export const ACTIVITIES_ROUTES: Route[] = [
   {
     path: '',
-    loadComponent: () => import('./routes/activities.page'),
+    loadComponent: () => import('./router/activities.page'),
   },
   {
     path: 'create',
-    loadComponent: () => import('./routes/activity-create.page'),
+    loadComponent: () => import('./router/activity-create.page'),
   },
   {
     path: ':slug',
-    loadComponent: () => import('./routes/activity-details.page'),
+    loadComponent: () => import('./router/activity-details.page'),
   },
   {
     path: ':slug/update',
-    loadComponent: () => import('./routes/activity-update.page'),
+    loadComponent: () => import('./router/activity-update.page'),
   },
 ];
 

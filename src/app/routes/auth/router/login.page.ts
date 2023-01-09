@@ -15,6 +15,6 @@ import { CredentialsForm } from '../ui/credentials.form';
 export default class LoginPage {
   authService = inject(AuthService);
   onSend(credentials: Credentials) {
-    this.authService.logIn$(credentials).subscribe();
+    this.authService.logIn(credentials);
   }
 }

@@ -30,7 +30,7 @@ describe('The activities editor page', () => {
         .clear()
         .type(participant.paymentMethod);
       cy.get('#acceptConditions').click();
-      cy.get('[type="submit"]').click();
+      cy.get('[type="button"]').click();
     });
   });
 });

@@ -44,8 +44,5 @@ import { AuthService } from '@routes/auth/service/auth.service';
 export class HeaderBlock {
   auth = inject(AuthService);
   title = '🅰️ 🌱 🧫 angular-small-lab';
-  userToken: UserToken = this.auth.getUserToken();
-  constructor() {
-    this.auth.userToken$.subscribe((userToken) => (this.userToken = userToken));
-  }
+  userToken: UserToken = this.auth.userToken;
 }

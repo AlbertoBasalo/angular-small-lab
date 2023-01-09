@@ -10,5 +10,17 @@
     "slug": "grand-canyon-rafting",
     "title": "Grand canyon rafting",
     "userId": 1
+  },
+  {
+    "ageCategory": "Family",
+    "date": "2025-03-01",
+    "description": "## Explore the Cumbre Vieja **Volcano**\r\n Experience the **force** of this _natural beast_.",
+    "id": 1,
+    "location": "Cumbre Vieja",
+    "maxParticipants": 10,
+    "price": 100,
+    "slug": "cumbre-vieja-exploration",
+    "title": "Cumbre Vieja exploration",
+    "userId": 1
   }
 ]

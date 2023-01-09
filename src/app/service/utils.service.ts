@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Marked } from '@ts-stack/markdown';
 @Injectable({
   providedIn: 'root',
 })
 export class UtilsService {
-  transformToHtml(markdown: string) {
-    const html = Marked.parse(markdown);
-    return html;
+  getParam(activatedRoute: ActivatedRoute, param = 'id') {
+    return activatedRoute.snapshot.paramMap.get(param) || '';
   }
 
   slugify(original: string) {
@@ -16,5 +16,9 @@ export class UtilsService {
       .replace(/[^\w\s-]/g, '')
       .replace(/[\s_-]+/g, '-')
       .replace(/^-+|-+$/g, '');
+  }
+  transformToHtml(markdown: string) {
+    const html = Marked.parse(markdown);
+    return html;
   }
 }

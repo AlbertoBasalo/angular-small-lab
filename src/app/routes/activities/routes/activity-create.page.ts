@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { ActivitiesService } from '../services/activities.service';
-import { Activity } from '../services/activity.interface';
+import { Activity } from '../domain/activity.interface';
+import { ActivitiesService } from '../service/activities.service';
 import { ActivityForm } from '../ui/activity.form';
 
 @Component({

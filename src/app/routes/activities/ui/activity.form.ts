@@ -6,7 +6,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Activity } from '../services/activity.interface';
+import { Activity } from '../domain/activity.interface';
 
 @Component({
   selector: 'lab-activity-form',

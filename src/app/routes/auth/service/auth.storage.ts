@@ -1,4 +1,4 @@
-import { NULL_USER_TOKEN, UserToken } from './user-token.interface';
+import { NULL_USER_TOKEN, UserToken } from '../domain/user-token.interface';
 
 export class AuthStorage {
   private readonly key = 'userToken';

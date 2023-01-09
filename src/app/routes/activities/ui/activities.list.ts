@@ -1,7 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Activity } from '@routes/activities/services/activity.interface';
+import { Activity } from '@routes/activities/domain/activity.interface';
 
 @Component({
   selector: 'lab-activities-list',
@@ -16,6 +16,6 @@ import { Activity } from '@routes/activities/services/activity.interface';
   `,
   styles: [],
 })
-export class ActivitiesListList {
+export class ActivitiesList {
   @Input() activities: Activity[] = [];
 }

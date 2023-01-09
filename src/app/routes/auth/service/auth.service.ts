@@ -1,10 +1,10 @@
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from '@srv/api.service';
 import { BehaviorSubject, pipe, tap } from 'rxjs';
+import { ApiService } from 'src/app/service/api.service';
+import { Credentials } from '../domain/credentials.interface';
+import { NULL_USER_TOKEN, UserToken } from '../domain/user-token.interface';
 import { AuthStorage } from './auth.storage';
-import { Credentials } from './credentials.interface';
-import { NULL_USER_TOKEN, UserToken } from './user-token.interface';
 
 @Injectable({
   providedIn: 'root',

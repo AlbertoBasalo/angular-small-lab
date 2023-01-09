@@ -30,7 +30,7 @@ First part of a set of laboratories for applications of different sizes and scop
 
 > a new repository coming soon, with all the features of _medium_ plus...
 
-### 📚 Libraries on multi-project mono-repo ⌛
+### 📚 Domain Libraries on multi-project mono-repo ⌛
 
 ### 👔 Domain logic extracted from Angular details ⌛
 

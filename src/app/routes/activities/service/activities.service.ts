@@ -1,8 +1,8 @@
 import { inject, Injectable } from '@angular/core';
-import { AuthService } from '@routes/auth/services/auth.service';
-import { ApiService } from '@srv/api.service';
-import { UtilsService } from '@srv/utils.service';
-import { Activity } from './activity.interface';
+import { AuthService } from '@routes/auth/service/auth.service';
+import { ApiService } from 'src/app/service/api.service';
+import { UtilsService } from 'src/app/service/utils.service';
+import { Activity } from '../domain/activity.interface';
 
 @Injectable({
   providedIn: 'root',

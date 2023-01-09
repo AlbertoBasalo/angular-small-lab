@@ -1,7 +1,8 @@
 import { JsonPipe, NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { UserToken } from '@routes/auth/services/user-token.interface';
+import { UserToken } from '@routes/auth/domain/user-token.interface';
+import { AuthService } from '@routes/auth/service/auth.service';
 
 @Component({
   selector: 'lab-header-block',
@@ -41,6 +42,10 @@ import { UserToken } from '@routes/auth/services/user-token.interface';
   `,
 })
 export class HeaderBlock {
-  @Input() title = '';
-  @Input() userToken!: UserToken;
+  auth = inject(AuthService);
+  title = '🅰️ 🌱 🧫 angular-small-lab';
+  userToken: UserToken = this.auth.getUserToken();
+  constructor() {
+    this.auth.userToken$.subscribe((userToken) => (this.userToken = userToken));
+  }
 }

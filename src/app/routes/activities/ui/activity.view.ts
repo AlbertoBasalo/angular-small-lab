@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
-import { UtilsService } from '@srv/utils.service';
-import { Activity } from '../services/activity.interface';
+import { UtilsService } from 'src/app/service/utils.service';
+import { Activity } from '../domain/activity.interface';
 
 @Component({
   selector: 'lab-activity-view',

@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { authGuard } from './routes/auth/services/auth.guard';
+import { authGuard } from './routes/auth/router/auth.guard';
 import { HomePage } from './routes/home/home.page';
 
 export const APP_ROUTES: Route[] = [
@@ -19,14 +19,10 @@ export const APP_ROUTES: Route[] = [
   },
   {
     path: 'activities',
-    loadChildren: () =>
-      import('./routes/activities/activities.routes').then(
-        (m) => m.ACTIVITIES_ROUTES
-      ),
+    loadChildren: () => import('./routes/activities/activities.routes'),
   },
   {
     path: 'auth',
-    loadChildren: () =>
-      import('./routes/auth/auth.routes').then((m) => m.AUTH_ROUTES),
+    loadChildren: () => import('./routes/auth/auth.routes'),
   },
 ];

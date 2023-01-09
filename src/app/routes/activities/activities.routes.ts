@@ -18,3 +18,5 @@ export const ACTIVITIES_ROUTES: Route[] = [
     loadComponent: () => import('./routes/activity-update.page'),
   },
 ];
+
+export default ACTIVITIES_ROUTES;

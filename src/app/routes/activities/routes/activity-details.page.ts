@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActivityParticipantForm } from '@routes/activities/ui/activity-participant.form';
-import { ActivitiesService } from '../services/activities.service';
-import { Activity } from '../services/activity.interface';
+import { Activity } from '../domain/activity.interface';
+import { ActivitiesService } from '../service/activities.service';
 import { ActivityView } from '../ui/activity.view';
 
 @Component({

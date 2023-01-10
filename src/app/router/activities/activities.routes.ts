@@ -1,24 +1,24 @@
 import { Route } from '@angular/router';
-import { authGuard } from '@router/auth/router/auth.guard';
+import { authGuard } from '@router/auth/auth.guard';
 
 export const ACTIVITIES_ROUTES: Route[] = [
   {
     path: '',
-    loadComponent: () => import('./router/activities.page'),
+    loadComponent: () => import('./routes/activities.page'),
   },
   {
     path: 'create',
     canActivate: [authGuard],
-    loadComponent: () => import('./router/activity-create.page'),
+    loadComponent: () => import('./routes/activity-create.page'),
   },
   {
     path: ':slug',
-    loadComponent: () => import('./router/activity-details.page'),
+    loadComponent: () => import('./routes/activity-details.page'),
   },
   {
     path: ':slug/update',
     canActivate: [authGuard],
-    loadComponent: () => import('./router/activity-update.page'),
+    loadComponent: () => import('./routes/activity-update.page'),
   },
 ];
 

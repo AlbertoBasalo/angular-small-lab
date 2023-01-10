@@ -1,7 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Activity } from '@routes/activities/domain/activity.interface';
+import { Activity } from '../domain/activity.interface';
 
 @Component({
   selector: 'lab-activities-list',

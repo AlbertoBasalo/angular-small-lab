@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { AuthService } from '@routes/auth/service/auth.service';
+import { UserTokenService } from '@service/user-token.service';
 import { ApiService } from 'src/app/service/api.service';
 import { UtilsService } from 'src/app/service/utils.service';
 import { Activity } from '../domain/activity.interface';
@@ -9,14 +9,14 @@ import { Activity } from '../domain/activity.interface';
 })
 export class ActivitiesService {
   apiService = inject(ApiService);
-  authService = inject(AuthService);
+  userTokenService = inject(UserTokenService);
   utilsService = inject(UtilsService);
   getActivities$() {
     return this.apiService.getAll$<Activity>('activities');
   }
   save$(activity: Omit<Activity, 'slug' | 'ownerId'>) {
     const slug = this.utilsService.slugify(activity.title || '');
-    const userId = this.authService.getUserId();
+    const userId = this.userTokenService.getUserId();
     const newActivity: Activity = {
       userId,
       slug,

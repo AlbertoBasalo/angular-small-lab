@@ -1,5 +1,5 @@
 import { Route } from '@angular/router';
-import { authGuard } from '@router/auth/auth.guard';
+import { AuthGuard } from 'src/app/auth.guard';
 
 export const ACTIVITIES_ROUTES: Route[] = [
   {
@@ -8,7 +8,7 @@ export const ACTIVITIES_ROUTES: Route[] = [
   },
   {
     path: 'create',
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
     loadComponent: () => import('./routes/activity-create.page'),
   },
   {
@@ -17,7 +17,7 @@ export const ACTIVITIES_ROUTES: Route[] = [
   },
   {
     path: ':slug/update',
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
     loadComponent: () => import('./routes/activity-update.page'),
   },
 ];

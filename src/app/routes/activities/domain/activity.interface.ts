@@ -8,6 +8,6 @@ export interface Activity {
   location: string;
   price: number;
   maxParticipants: number;
-  numberOfParticipants: number;
+  currentParticipants: number;
   ageCategory: 'adult' | 'child' | 'family';
 }

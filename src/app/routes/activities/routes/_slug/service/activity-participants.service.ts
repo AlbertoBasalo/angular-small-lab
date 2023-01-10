@@ -12,7 +12,7 @@ export class ActivityParticipantsService {
   addParticipant(activity: Activity, participant: Partial<Participant>) {
     if (activity.id === undefined) throw new Error('activity.id is undefined');
     const activityId = activity.id;
-    if (activity.numberOfParticipants === activity.maxParticipants)
+    if (activity.currentParticipants === activity.maxParticipants)
       throw new Error('activity is full');
     const userId = this.userTokenService.getUserId();
     if (userId === 0) throw new Error('userId is undefined');
@@ -24,8 +24,11 @@ export class ActivityParticipantsService {
     this.apiService
       .post$<Participant, Partial<Participant>>('participants', newParticipant)
       .subscribe(() => {
-        activity.numberOfParticipants = activity.numberOfParticipants + 1;
-        this.apiService.put$<Activity>('activities', activityId, activity);
+        activity.currentParticipants = activity.currentParticipants + 1;
+        console.log(activity);
+        this.apiService
+          .put$<Activity>('activities', activityId, activity)
+          .subscribe();
       });
   }
 }

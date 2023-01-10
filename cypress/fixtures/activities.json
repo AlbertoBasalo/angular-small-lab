@@ -1,6 +1,7 @@
 [
   {
     "ageCategory": "Only Adults",
+    "currentParticipants": 0,
     "date": "2025-01-01",
     "description": "## Rafting at the Grand Canyon\r\n Experience the **adrenaline** in this _natural beast_.",
     "id": 1,
@@ -13,12 +14,13 @@
   },
   {
     "ageCategory": "Family",
+    "currentParticipants": 0,
     "date": "2025-03-01",
     "description": "## Explore the Cumbre Vieja **Volcano**\r\n Experience the **force** of this _natural beast_.",
     "id": 1,
     "location": "Cumbre Vieja",
-    "maxParticipants": 10,
-    "price": 100,
+    "maxParticipants": 30,
+    "price": 20,
     "slug": "cumbre-vieja-exploration",
     "title": "Cumbre Vieja exploration",
     "userId": 1

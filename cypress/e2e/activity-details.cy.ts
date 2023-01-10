@@ -20,6 +20,16 @@ describe('The activities editor page', () => {
     cy.get('header').should('contain', activities[0].title);
   });
   it('should fill the participant form', () => {
+    cy.intercept('POST', 'http://localhost:3000/participants', {
+      statusCode: 201,
+    }).as('post_participant');
+    cy.intercept(
+      'PUT',
+      'http://localhost:3000/activities/' + activities[0].id,
+      {
+        statusCode: 200,
+      }
+    ).as('put_activity');
     cy.fixture('participant').then((data) => {
       const participant = data;
       cy.get('input[name="name"]').clear().type(participant.name);

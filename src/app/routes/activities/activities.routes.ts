@@ -1,6 +1,8 @@
 import { Route } from '@angular/router';
 import { AuthGuard } from 'src/app/auth.guard';
 
+// * 5️⃣ Complex Example of multi-level ROUTES with a recursive folder structure
+
 export const ACTIVITIES_ROUTES: Route[] = [
   {
     path: '',
@@ -9,16 +11,16 @@ export const ACTIVITIES_ROUTES: Route[] = [
   {
     path: 'create',
     canActivate: [AuthGuard],
-    loadComponent: () => import('./routes/activity-create.page'),
+    loadComponent: () => import('./routes/create/activity-create.page'),
   },
   {
     path: ':slug',
-    loadComponent: () => import('./routes/activity-details.page'),
+    loadComponent: () => import('./routes/details/activity-details.page'),
   },
   {
-    path: ':slug/update',
+    path: ':slug/edit',
     canActivate: [AuthGuard],
-    loadComponent: () => import('./routes/activity-update.page'),
+    loadComponent: () => import('./routes/details/edit/activity-update.page'),
   },
 ];
 

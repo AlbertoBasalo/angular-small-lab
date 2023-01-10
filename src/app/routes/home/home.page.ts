@@ -1,8 +1,12 @@
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { Feature } from '@routes/home/feature.type';
+
+// * 1️⃣ Minimalist example of a page COMPONENT
 
 @Component({
   standalone: true,
-  imports: [],
+  imports: [NgFor, NgIf],
   template: `
     <article>
       <header>
@@ -12,14 +16,22 @@ import { Component } from '@angular/core';
       </header>
       <main>
         <ul>
-          <li>🏝️ Full Standalone APIs ✅</li>
-          <li>🗺️ Lazy Route Components ✅</li>
-          <li>📺 Container (page) - Presenters (form, table...) ✅</li>
-          <li>🧪 E2E Testing ✅</li>
+          <li *ngFor="let feature of features">
+            {{ feature.title }}
+            <span *ngIf="feature.complete">✅</span>
+            <span *ngIf="!feature.complete">⏳</span>
+          </li>
         </ul>
       </main>
     </article>
   `,
   styles: [],
 })
-export class HomePage {}
+export class HomePage {
+  features: Feature[] = [
+    { title: '🏝️ Full Standalone APIs', complete: true },
+    { title: '🗺️ Lazy Route Components', complete: true },
+    { title: '📺 Container - Presenters Components', complete: true },
+    { title: '🧪 E2E Testing with Cypress', complete: true },
+  ];
+}

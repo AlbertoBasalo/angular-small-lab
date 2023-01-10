@@ -1,10 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UtilsService } from '@service/utils.service';
-import { Activity } from '../domain/activity.interface';
-import { ActivitiesService } from '../service/activities.service';
-import { ActivityParticipantForm } from '../ui/activity-participant.form';
-import { ActivityView } from '../ui/activity.view';
+import { Activity } from '../../domain/activity.interface';
+import { ActivitiesService } from '../../service/activities.service';
+import { ActivityParticipantForm } from './activity-participant.form';
+import { ActivityView } from './activity.view';
 
 @Component({
   standalone: true,

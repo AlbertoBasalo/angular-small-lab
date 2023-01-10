@@ -1,7 +1,9 @@
 # Technologies used
 
-- [ ] Angular CLI
-- [ ] Pico CSS
-- [ ] RxJs observables
-- [ ] Cypress end-to-end tests
-- [ ] SURD folder system
+- [x] Angular CLI
+- [x] Pico CSS
+- [x] RxJs observables
+- [x] Cypress end-to-end tests with intercepted API calls
+- [x] SURD folder system (Service, UI, Routes, Domain)
+- [x] Container - Presentational pattern for components
+- [x] Subtyped components

@@ -10,7 +10,8 @@ import { Author } from './author.interface';
     <article>
       <header>
         <h4>
-          This suite of labs for creating applications of any size with Angular
+          Part of a suite of labs for creating applications of any size with
+          Angular
         </h4>
         <h3>
           Developed by
@@ -31,7 +32,7 @@ import { Author } from './author.interface';
       <footer>
         <p>To log in use :</p>
         <pre>
-          <p>Email: bill at musk dot meta</p>
+          <p>Email: bill (at) musk (dot) meta</p>
           <p>Password: 1234</p>
         </pre>
       </footer>

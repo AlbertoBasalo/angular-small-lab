@@ -4,6 +4,8 @@ import { AboutService } from './about.service';
 import { Author } from './author.interface';
 import { AuthorView } from './author.view';
 
+// * 3️⃣ Complete example of a page component using a service and a PRESENTATIONAL component
+
 @Component({
   standalone: true,
   imports: [NgIf, AuthorView],

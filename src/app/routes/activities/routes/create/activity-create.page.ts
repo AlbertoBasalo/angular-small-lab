@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { Activity } from '../domain/activity.interface';
-import { ActivitiesService } from '../service/activities.service';
-import { ActivityForm } from '../ui/activity.form';
+import { Activity } from '../../domain/activity.interface';
+import { ActivitiesService } from '../../service/activities.service';
+import { ActivityForm } from './activity.form';
 
 @Component({
   standalone: true,

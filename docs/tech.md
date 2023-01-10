@@ -7,3 +7,4 @@
 - [x] SURD folder system (Service, UI, Routes, Domain)
 - [x] Container - Presentational pattern for components
 - [x] Subtyped components
+- [x] Root and route services

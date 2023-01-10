@@ -1,5 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Participant } from '@routes/activities/routes/_slug/domain/participant.interface';
+import { ActivityParticipantsService } from '@routes/activities/routes/_slug/service/activity-participants.service';
 import { UtilsService } from '@service/utils.service';
 import { Activity } from '../../domain/activity.interface';
 import { ActivitiesService } from '../../service/activities.service';
@@ -18,16 +20,17 @@ import { ActivityView } from './ui/activity.view';
 })
 export default class SlugPage implements OnInit {
   activatedRoute = inject(ActivatedRoute);
-  service = inject(ActivitiesService);
+  activitiesService = inject(ActivitiesService);
+  activityParticipantsService = inject(ActivityParticipantsService);
   utils = inject(UtilsService);
   slug = this.utils.getParam(this.activatedRoute, 'slug');
   activity!: Activity;
   ngOnInit() {
-    this.service.getBySlug$(this.slug).subscribe((activities) => {
+    this.activitiesService.getBySlug$(this.slug).subscribe((activities) => {
       this.activity = activities[0];
     });
   }
-  onAddParticipant(participant: any) {
-    console.log('submitted', participant);
+  onAddParticipant(participant: Partial<Participant>) {
+    this.activityParticipantsService.addParticipant(this.activity, participant);
   }
 }

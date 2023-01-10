@@ -13,7 +13,7 @@ export class ApiService {
     return this.http.get<T[]>(this.createUrl({ resource }));
   }
 
-  getById$<T>(resource: string, id: string = '') {
+  getById$<T>(resource: string, id: string | number = '') {
     return this.http.get<T>(this.createUrl({ resource, id }));
   }
 
@@ -25,7 +25,7 @@ export class ApiService {
     return this.http.post<T>(this.createUrl({ resource }), payload);
   }
 
-  put$<T>(resource: string, id: string, payload: Partial<T>) {
+  put$<T>(resource: string, id: string | number, payload: Partial<T>) {
     return this.http.put<T>(this.createUrl({ resource, id }), payload);
   }
   private createUrl(urlParts: UrlParts): string {
@@ -40,4 +40,4 @@ export class ApiService {
   }
 }
 
-type UrlParts = { resource: string; id?: string; query?: string };
+type UrlParts = { resource: string; id?: string | number; query?: string };

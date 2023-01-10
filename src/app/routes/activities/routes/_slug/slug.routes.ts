@@ -1,4 +1,5 @@
 import { Route } from '@angular/router';
+import { ActivityParticipantsService } from '@routes/activities/routes/_slug/service/activity-participants.service';
 import { AuthGuard } from 'src/app/auth.guard';
 
 // * 5️⃣ Complex Example of multi-level ROUTES with a recursive folder structure
@@ -6,6 +7,7 @@ import { AuthGuard } from 'src/app/auth.guard';
 export default [
   {
     path: '',
+    providers: [ActivityParticipantsService],
     loadComponent: () => import('./slug.page'),
   },
   {

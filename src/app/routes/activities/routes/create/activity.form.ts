@@ -114,7 +114,7 @@ export class ActivityForm {
       ],
       nonNullable: true,
     }),
-    maxParticipants: new FormControl<number>(0, {
+    maxParticipants: new FormControl<number>(10, {
       nonNullable: true,
     }),
     ageCategory: new FormControl<string>('family', {

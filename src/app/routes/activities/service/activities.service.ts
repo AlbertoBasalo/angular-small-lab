@@ -15,6 +15,7 @@ export class ActivitiesService {
   save$(activity: Omit<Activity, 'slug' | 'ownerId'>) {
     const slug = this.utilsService.slugify(activity.title || '');
     const userId = this.userTokenService.getUserId();
+    if (userId === 0) throw new Error('userId is undefined');
     const newActivity: Activity = {
       userId,
       slug,

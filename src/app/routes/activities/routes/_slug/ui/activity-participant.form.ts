@@ -2,9 +2,11 @@ import { Component, EventEmitter, inject, Output } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
+  FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Participant } from '@routes/activities/routes/_slug/domain/participant.interface';
 
 @Component({
   selector: 'lab-activity-participant-form',
@@ -55,23 +57,50 @@ import {
 
       <input
         type="button"
-        value="Submit"
+        value="Add Participant"
         [disabled]="form.invalid"
-        (click)="addParticipant.next(form.value)"
+        (click)="onAddParticipantClick()"
       />
     </form>
   `,
   styles: [],
 })
 export class ActivityParticipantForm {
-  @Output() addParticipant = new EventEmitter<any>();
+  @Output() addParticipant = new EventEmitter<Partial<Participant>>();
   formBuilder = inject(FormBuilder);
-  form = this.formBuilder.group({
-    name: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    phone: new FormControl('', [Validators.required]),
-    address: new FormControl('', [Validators.required]),
-    paymentMethod: new FormControl('', [Validators.required]),
-    acceptConditions: new FormControl('', [Validators.requiredTrue]),
+  form = this.formBuilder.group<ControlsOf<Partial<Participant>>>({
+    name: new FormControl<string>('', {
+      validators: [Validators.required],
+      nonNullable: true,
+    }),
+    email: new FormControl('', {
+      validators: [Validators.required, Validators.email],
+      nonNullable: true,
+    }),
+    phone: new FormControl('', {
+      validators: [Validators.required],
+      nonNullable: true,
+    }),
+    address: new FormControl('', {
+      validators: [Validators.required],
+      nonNullable: true,
+    }),
+    paymentMethod: new FormControl('', {
+      validators: [Validators.required],
+      nonNullable: true,
+    }),
+    acceptConditions: new FormControl(false, {
+      validators: [Validators.requiredTrue],
+      nonNullable: true,
+    }),
   });
+  onAddParticipantClick() {
+    this.addParticipant.next(this.form.value);
+  }
 }
+
+export type ControlsOf<T extends Record<string, any>> = {
+  [K in keyof T]: T[K] extends Record<any, any>
+    ? FormGroup<ControlsOf<T[K]>>
+    : FormControl<T[K]>;
+};

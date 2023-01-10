@@ -4,9 +4,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@ui/*": ["src/app/ui/*"],
+      "@domain/*": ["src/app/domain/*"],
       "@router/*": ["src/app/router/*"],
-      "@srv/*": ["src/app/service/*"]
+      "@ui/*": ["src/app/ui/*"],
+      "@service/*": ["src/app/service/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

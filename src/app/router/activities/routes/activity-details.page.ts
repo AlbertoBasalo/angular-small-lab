@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ActivityParticipantForm } from '@routes/activities/ui/activity-participant.form';
-import { UtilsService } from '@srv/utils.service';
+import { ActivityParticipantForm } from '@router/activities/ui/activity-participant.form';
+import { UtilsService } from '@service/utils.service';
 import { Activity } from '../domain/activity.interface';
 import { ActivitiesService } from '../service/activities.service';
 import { ActivityView } from '../ui/activity.view';

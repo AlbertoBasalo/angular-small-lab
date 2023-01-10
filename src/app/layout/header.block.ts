@@ -1,8 +1,8 @@
 import { JsonPipe, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { UserToken } from '@domain/user-token.interface';
 import { AuthService } from '@router/auth/service/auth.service';
-import { UserToken } from 'src/app/domain/user-token.interface';
 
 @Component({
   selector: 'lab-header-block',

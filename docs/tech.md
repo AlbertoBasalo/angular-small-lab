@@ -4,4 +4,4 @@
 - [ ] Pico CSS
 - [ ] RxJs observables
 - [ ] Cypress end-to-end tests
-- [ ] DRSU folder
+- [ ] SURD folder system

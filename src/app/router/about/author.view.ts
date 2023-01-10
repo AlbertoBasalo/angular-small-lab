@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { LinkComponent } from 'src/app/ui/link.component';
+import { LinkComponent } from '@ui/link.component';
 import { Author } from './author.interface';
 
 @Component({

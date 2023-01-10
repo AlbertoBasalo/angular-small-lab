@@ -7,6 +7,8 @@ export default defineConfig({
     // supportFile: false,
     viewportHeight: 1024,
     viewportWidth: 1280,
+    video: false,
+    videoUploadOnPasses: false,
   },
 
   component: {

@@ -1,4 +1,4 @@
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Activity } from '../domain/activity.interface';
@@ -6,13 +6,16 @@ import { Activity } from '../domain/activity.interface';
 @Component({
   selector: 'lab-activities-list',
   standalone: true,
-  imports: [NgFor, RouterLink],
+  imports: [NgFor, NgIf, RouterLink],
   template: `
-    <ul>
+    <ul *ngIf="activities.length > 0; else noDataYet">
       <li *ngFor="let activity of activities">
         <a routerLink="/activities/{{ activity.slug }}">{{ activity.title }}</a>
       </li>
     </ul>
+    <ng-template #noDataYet>
+      <p>🕳️ No activities yet</p>
+    </ng-template>
   `,
   styles: [],
 })

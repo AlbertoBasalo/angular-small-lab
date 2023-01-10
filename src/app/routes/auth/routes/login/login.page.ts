@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { Credentials } from '../domain/credentials.interface';
-import { AuthService } from '../service/auth.service';
-import { CredentialsForm } from '../ui/credentials.form';
+import { Credentials } from '../../domain/credentials.interface';
+import { AuthService } from '../../service/auth.service';
+import { CredentialsForm } from '../../ui/credentials.form';
 
 @Component({
   standalone: true,

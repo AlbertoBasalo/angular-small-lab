@@ -4,9 +4,7 @@ import { ApiService } from '@service/api.service';
 import { UserTokenService } from '@service/user-token.service';
 import { Credentials } from '../domain/credentials.interface';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class AuthService {
   apiService = inject(ApiService);
   userTokenService = inject(UserTokenService);

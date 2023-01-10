@@ -4,9 +4,7 @@ import { ApiService } from 'src/app/service/api.service';
 import { UtilsService } from 'src/app/service/utils.service';
 import { Activity } from '../domain/activity.interface';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ActivitiesService {
   apiService = inject(ApiService);
   userTokenService = inject(UserTokenService);

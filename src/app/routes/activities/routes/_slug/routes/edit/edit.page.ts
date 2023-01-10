@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
   template: ` <p>view works!</p> `,
   styles: [],
 })
-export default class ActivityEditPage {}
+export default class EditPage {}

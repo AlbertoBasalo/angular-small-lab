@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Activity } from '../domain/activity.interface';
-import { ActivitiesService } from '../service/activities.service';
-import { ActivitiesList } from '../ui/activities.list';
+import { Activity } from './domain/activity.interface';
+import { ActivitiesService } from './service/activities.service';
+import { ActivitiesList } from './ui/activities.list';
 
 @Component({
   standalone: true,

@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { UtilsService } from '@service/utils.service';
 import { Activity } from '../../domain/activity.interface';
 import { ActivitiesService } from '../../service/activities.service';
-import { ActivityParticipantForm } from './activity-participant.form';
-import { ActivityView } from './activity.view';
+import { ActivityParticipantForm } from './ui/activity-participant.form';
+import { ActivityView } from './ui/activity.view';
 
 @Component({
   standalone: true,
@@ -16,7 +16,7 @@ import { ActivityView } from './activity.view';
   `,
   styles: [],
 })
-export default class ActivityDetailsPage implements OnInit {
+export default class SlugPage implements OnInit {
   activatedRoute = inject(ActivatedRoute);
   service = inject(ActivitiesService);
   utils = inject(UtilsService);

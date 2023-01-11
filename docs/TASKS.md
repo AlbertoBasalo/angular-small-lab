@@ -1,65 +1,50 @@
 # Functional specifications for the lab
 
-Issues:
+## Use cases:
 
-- [ ] Layout
-  - [ ] Header
-  - [ ] Footer
-- [ ] Common
-  - [ ] Home page
-  - [ ] About page
-  - [ ] Contact page
-- [ ] Authentication
-  - [ ] Login page
-  - [ ] Register page
+### Anonymous user:
+
+- [x] Info about the project
+- [x] User can register
+- [x] User can login
+- [x] View activities
+- [2] Get in contact with the project
+
+### Registered user
+
+- [x] Add activity
+- [x] Add participant to activity
+- [ ] Edit activity
+- [ ] Cancel activity
+- [ ] Remove participant from activity
+- [ ] Confirm participant to activity
+
+## Artifacts:
+
+- [x] Layout
+  - [x] Header
+  - [x] Footer
+- [x] Generic pages
+  - [x] Home page
+  - [x] About page
+  - [x] Contact page
+- [x] Authentication
+  - [x] Api interceptor
+  - [x] User Token service and storage
+  - [x] Login page
+  - [x] Register page
   - [ ] Profile page
+- [x] Instrumentation
+  - [x] Notifications dispatcher
+  - [x] Error handling
+  - [x] Notifications dialog
 - [ ] Activities
-  - [ ] Activities page
-  - [ ] Create Activity page
+  - [x] Activities page
+  - [x] Create Activity page
   - [ ] Edit Activity page
-  - [ ] View Activity page
+  - [x] View Activity page
   - [ ] Cancel Activity dialog
 - [ ] Participants
-  - [ ] Add participant page
+  - [x] Add participant page
   - [ ] Remove participant dialog
   - [ ] Confirm participant dialog
-
-## Layout
-
-### Header
-
-Navigation menu with the following links for login, register when the user is not logged in and profile and other functions when the user is logged in.
-
-### Footer
-
-Navigation menu with links to about and contact pages.
-
-## Home page
-
-## About page
-
-## Contact page
-
-## Login page
-
-## Register page
-
-## Profile page
-
-## Activities page
-
-## Create Activity page
-
-## Edit Activity page
-
-## View Activity page
-
-## Cancel Activity dialog
-
-## Add participant page
-
-## Remove participant dialog
-
-## Confirm participant dialog
-
----

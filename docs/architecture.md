@@ -4,6 +4,13 @@
 
 The small lab architecture is a single project that contains all the code for the app. This is the simplest architecture and is suitable for individual developers or small teams.
 
+## Patterns and practices
+
+- [x] SURD folder system (Service, UI, Routes, Domain)
+- [x] Container - Presentational pattern for components
+- [x] Subtyped components
+- [x] Root and route services
+
 ## Main folder structure
 
 The main folder structure is the following:

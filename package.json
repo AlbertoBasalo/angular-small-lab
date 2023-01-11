@@ -21,7 +21,8 @@
     "api": "json-server-auth --watch ./database/data.json --routes ./database/routes.json",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "update": "ng update @angular/cli @angular/core"
   },
   "private": true,
   "dependencies": {

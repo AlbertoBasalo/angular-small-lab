@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Participant } from '@routes/activities/routes/_slug/domain/participant.interface';
 import { ActivityParticipantsService } from '@routes/activities/routes/_slug/service/activity-participants.service';
+import { InstrumentationService } from '@service/instrumentation.service';
 import { UtilsService } from '@service/utils.service';
 import { Activity } from '../../domain/activity.interface';
 import { ActivitiesService } from '../../service/activities.service';
@@ -19,6 +20,7 @@ import { ActivityView } from './ui/activity.view';
   styles: [],
 })
 export default class SlugPage implements OnInit {
+  instrumentationService = inject(InstrumentationService);
   activatedRoute = inject(ActivatedRoute);
   activitiesService = inject(ActivitiesService);
   activityParticipantsService = inject(ActivityParticipantsService);
@@ -31,6 +33,13 @@ export default class SlugPage implements OnInit {
     });
   }
   onAddParticipant(participant: Partial<Participant>) {
-    this.activityParticipantsService.addParticipant(this.activity, participant);
+    try {
+      this.activityParticipantsService.addParticipant(
+        this.activity,
+        participant
+      );
+    } catch (error) {
+      this.instrumentationService.notifyError(error);
+    }
   }
 }

@@ -1,5 +1,7 @@
 # 📋 Command Line Interface journal
 
+// ToDo: update based on refactored solution
+
 ## 1️⃣ Bootstrap application
 
 ```bash

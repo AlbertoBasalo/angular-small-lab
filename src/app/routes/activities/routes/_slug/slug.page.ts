@@ -9,6 +9,8 @@ import { ActivitiesService } from '../../service/activities.service';
 import { ActivityParticipantForm } from './ui/activity-participant.form';
 import { ActivityView } from './ui/activity.view';
 
+// * 6️⃣ Complex Example of a Component error handling
+
 @Component({
   standalone: true,
   imports: [ActivityView, ActivityParticipantForm],

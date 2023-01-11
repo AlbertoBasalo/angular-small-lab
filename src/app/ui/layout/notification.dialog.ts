@@ -1,10 +1,11 @@
 import { NgIf, TitleCasePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { Notification, UserResponse } from '@domain/notification.interface';
+import { Notification } from '@domain/notification.interface';
+import { UserResponse } from '@domain/user-response.type';
 import { InstrumentationService } from '@service/instrumentation.service';
 
 @Component({
-  selector: 'lab-message-dialog',
+  selector: 'lab-notification-dialog',
   standalone: true,
   imports: [NgIf, TitleCasePipe],
   template: `
@@ -37,7 +38,7 @@ import { InstrumentationService } from '@service/instrumentation.service';
   `,
   styles: [],
 })
-export class MessageDialog {
+export class NotificationDialog {
   instrumentationService = inject(InstrumentationService);
   isOpen = false;
   notification: Notification | null = null;

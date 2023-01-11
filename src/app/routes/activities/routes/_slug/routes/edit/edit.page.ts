@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   template: ` <p>view works!</p> `,
   styles: [],
 })
-export default class EditPage {}
+export default class EditPage {
+  // ToDo: implement activity edit page (include delete button)
+}

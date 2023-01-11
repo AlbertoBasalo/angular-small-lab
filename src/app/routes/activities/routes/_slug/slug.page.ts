@@ -39,7 +39,7 @@ export default class SlugPage implements OnInit {
         participant
       );
     } catch (error) {
-      this.instrumentationService.notifyError(error);
+      this.instrumentationService.notifyWarning(error);
     }
   }
 }

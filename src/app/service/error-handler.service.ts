@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorHandler, inject, Injectable } from '@angular/core';
 import { InstrumentationService } from '@service/instrumentation.service';
 
@@ -7,6 +8,8 @@ import { InstrumentationService } from '@service/instrumentation.service';
 export class ErrorHandlerService implements ErrorHandler {
   instrumentationService = inject(InstrumentationService);
   handleError(error: any): void {
-    this.instrumentationService.notifyError(error);
+    if (error instanceof HttpErrorResponse) {
+      this.instrumentationService.notifyHttpWarning(error);
+    } else this.instrumentationService.notifyError(error);
   }
 }

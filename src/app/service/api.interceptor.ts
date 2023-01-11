@@ -14,7 +14,7 @@ export const apiInterceptor: HttpInterceptorFn = (req, next) => {
   const userTokenService = inject(UserTokenService);
   const instrumentationService = inject(InstrumentationService);
   req = addAuthHeader(userTokenService.getUserToken(), req);
-  console.log(`req: ${req.method} ${req.url}`);
+  instrumentationService.notifyDebug(`req: ${req.method} ${req.url}`);
   return next(req).pipe(
     catchError((error) => {
       console.log(`err: ${error.status} ${req.method} ${req.url}`);

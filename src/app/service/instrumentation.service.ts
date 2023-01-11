@@ -1,23 +1,75 @@
 import { Injectable } from '@angular/core';
-import { Message, UserResponse } from '@domain/message.interface';
+import { Notification, UserResponse } from '@domain/notification.interface';
 import { Subject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class InstrumentationService {
-  message: Message = { category: 'info', title: '', body: '' };
-  notifications$ = new Subject<Message>();
+  notification: Notification = { category: 'info', title: '', message: '' };
+  notifications$ = new Subject<Notification>();
+  responses$ = new Subject<UserResponse>();
 
-  notifyError(error: unknown) {
-    this.message = {
+  notifyError(error: unknown, title = 'Error') {
+    this.notification = {
       category: 'error',
-      title: 'Error',
-      body: getErrorMessage(error),
+      title,
+      message: getErrorMessage(error),
     };
-    this.notifications$.next(this.message);
-    console.error(this.message);
+    this.notifications$.next(this.notification);
+    console.error(this.notification);
+  }
+
+  notifyWarning(error: unknown, title = 'Warning') {
+    this.notification = {
+      category: 'warning',
+      title,
+      message: getErrorMessage(error),
+    };
+    this.notifications$.next(this.notification);
+    console.warn(this.notification);
+  }
+
+  notifyHttpWarning(error: unknown, title = 'Communication error') {
+    this.notification = {
+      category: 'warning',
+      title,
+      message: getErrorMessage(error),
+    };
+    this.notifications$.next(this.notification);
+    console.warn(this.notification);
+  }
+
+  notifyInfo(message: string, title = 'Info') {
+    this.notification = {
+      category: 'info',
+      title,
+      message,
+    };
+    this.notifications$.next(this.notification);
+    console.info(this.notification);
+  }
+
+  notifyDebug(message: string, title = 'Debug') {
+    this.notification = {
+      category: 'debug',
+      title,
+      message,
+    };
+    this.notifications$.next(this.notification);
+    console.debug(this.notification);
+  }
+
+  notifyQuestion(message: string, title = 'Question') {
+    this.notification = {
+      category: 'question',
+      title,
+      message,
+    };
+    this.notifications$.next(this.notification);
+    console.log(this.notification);
   }
 
   notifyUserResponse(response: UserResponse) {
+    this.responses$.next(response);
     console.log(response);
   }
 }

@@ -1,6 +1,6 @@
 import { NgIf, TitleCasePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { Message, UserResponse } from '@domain/message.interface';
+import { Notification, UserResponse } from '@domain/notification.interface';
 import { InstrumentationService } from '@service/instrumentation.service';
 
 @Component({
@@ -8,17 +8,17 @@ import { InstrumentationService } from '@service/instrumentation.service';
   standalone: true,
   imports: [NgIf, TitleCasePipe],
   template: `
-    <dialog *ngIf="message" [open]="isOpen">
+    <dialog *ngIf="notification" [open]="isOpen">
       <article>
         <header>
           <span>
-            <span>{{ icons[message.category] }}</span>
-            <span>{{ message.title || message.category | titlecase }}</span>
+            <span>{{ icons[notification.category] }}</span>
+            <span>{{ notification.title | titlecase }}</span>
           </span>
           <span aria-label="Close" role="button" (click)="close()">❎</span>
         </header>
         <p>
-          {{ message.body }}
+          {{ notification.message }}
         </p>
         <footer>
           <span
@@ -40,7 +40,7 @@ import { InstrumentationService } from '@service/instrumentation.service';
 export class MessageDialog {
   instrumentationService = inject(InstrumentationService);
   isOpen = false;
-  message: Message | null = null;
+  notification: Notification | null = null;
   showCancel = true;
   showConfirm = true;
 
@@ -49,20 +49,21 @@ export class MessageDialog {
     info: 'ℹ️',
     warning: '☣️',
     question: '❓',
+    debug: '🐞',
   };
 
   constructor() {
-    this.instrumentationService.notifications$.subscribe((message) => {
-      this.message = message;
+    this.instrumentationService.notifications$.subscribe((notification) => {
+      if (notification.category === 'debug') return;
+      this.notification = notification;
       this.isOpen = true;
-      this.showCancel = message.category === 'question';
-      this.showConfirm = message.category === 'question';
+      this.showCancel = notification.category === 'question';
+      this.showConfirm = notification.category === 'question';
     });
   }
 
   close(userResponse?: UserResponse) {
     this.isOpen = false;
-    this.message = null;
     if (userResponse)
       this.instrumentationService.notifyUserResponse(userResponse);
   }

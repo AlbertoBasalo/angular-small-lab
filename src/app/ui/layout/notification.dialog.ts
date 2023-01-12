@@ -9,7 +9,7 @@ import { InstrumentationService } from '@service/instrumentation.service';
   standalone: true,
   imports: [NgIf, TitleCasePipe],
   template: `
-    <dialog *ngIf="notification" [open]="isOpen">
+    <dialog *ngIf="notification" [open]="isOpen" id="notification">
       <article>
         <header>
           <span>

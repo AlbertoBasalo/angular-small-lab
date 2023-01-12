@@ -1,10 +1,10 @@
 {
   "ageCategory": "Only Adults",
+  "currentParticipants": 0,
   "date": "2025-01-01",
   "description": "## Rafting as the Grand Canyon\r\n Experience the **adrenaline** in this _natural beast_.",
   "location": "Grand canyon",
   "maxParticipants": 10,
-  "numberOfParticipants": 0,
   "price": 100,
   "slug": "grand-canyon-rafting",
   "title": "Grand canyon rafting"

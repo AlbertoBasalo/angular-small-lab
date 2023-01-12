@@ -1,0 +1,12 @@
+{
+  "ageCategory": "Only Adults",
+  "currentParticipants": 4,
+  "date": "2024-01-01",
+  "description": "## Hot air Ballon ride over Cappadocia\r\n Experience the **tranquility** in this _natural beauty_.",
+  "id": 666,
+  "location": "Capadoccia",
+  "maxParticipants": 4,
+  "price": 200,
+  "slug": "balloon-in-cappadocia",
+  "title": "Balloon in Cappadocia"
+}

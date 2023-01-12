@@ -13,12 +13,17 @@ import {
   EMPTY_ACTIVITY,
 } from '../../domain/activity.interface';
 
+// ToDo: Add labelling to inputs
+
 @Component({
   selector: 'lab-activity-form',
   standalone: true,
   imports: [ReactiveFormsModule],
   template: `
+    <!-- add labels to input controls -->
+
     <form [formGroup]="form">
+      <label for="title">Title</label>
       <input
         id="title"
         name="title"
@@ -26,6 +31,7 @@ import {
         placeholder="Post title"
         [attr.aria-invalid]="hasError('title')"
       />
+      <label for="description">Description</label>
       <textarea
         id="description"
         name="description"
@@ -34,6 +40,7 @@ import {
         placeholder="Describe the activity in markdown"
         [attr.aria-invalid]="hasError('description')"
       ></textarea>
+      <label for="date">Date</label>
       <input
         id="date"
         name="date"
@@ -42,6 +49,7 @@ import {
         placeholder="Date"
         [attr.aria-invalid]="hasError('date')"
       />
+      <label for="location">Location</label>
       <input
         id="location"
         name="location"
@@ -49,6 +57,7 @@ import {
         placeholder="Location"
         [attr.aria-invalid]="hasError('location')"
       />
+      <label for="price">Price</label>
       <input
         id="price"
         name="price"
@@ -57,6 +66,7 @@ import {
         placeholder="Location"
         [attr.aria-invalid]="hasError('location')"
       />
+      <label for="maxParticipants">Max participants</label>
       <input
         id="maxParticipants"
         name="maxParticipants"
@@ -65,6 +75,7 @@ import {
         placeholder="Max participants"
         [attr.aria-invalid]="hasError('maxParticipants')"
       />
+      <label for="ageCategory">Age category</label>
       <select
         id="ageCategory"
         name="ageCategory"
@@ -75,7 +86,7 @@ import {
         <option value="adults">Only Adults</option>
         <option value="kids">Just for Kids</option>
       </select>
-
+      <label for="status">Status</label>
       <label for="published">
         <input
           type="radio"

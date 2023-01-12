@@ -41,6 +41,19 @@
       "status": "cancelled",
       "title": "Balloon in Cappadocia",
       "userId": 1
+    },
+    {
+      "userId": 1,
+      "slug": "stand-up-paddle-surf-in-lake-lucerne",
+      "title": "Stand-up paddle surf in Lake Lucerne",
+      "description": "Want you to paddleboard on Switzerland?\nWith a surface of almost _114 square kilometers_, Lake **Lucerne** is a popular destination for stand-up paddlers.",
+      "date": "2023-11-09",
+      "location": "Lucerne",
+      "maxParticipants": 6,
+      "ageCategory": "family",
+      "price": "50",
+      "status": "published",
+      "id": 667
     }
   ],
   "author": {

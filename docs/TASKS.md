@@ -5,19 +5,20 @@
 ### Anonymous user:
 
 - [x] Info about the project
+- [x] View activities
+- [x] Get in contact form
 - [x] User can register
 - [x] User can login
-- [x] View activities
-- [2] Get in contact with the project
+- [x] Notify app status to user
 
 ### Registered user
 
 - [x] Add activity
 - [x] Add participant to activity
 - [ ] Edit activity
+- [ ] Confirm/reject participant to activity
 - [ ] Cancel activity
-- [ ] Remove participant from activity
-- [ ] Confirm participant to activity
+- [ ] Cancel participation from activity
 
 ## Artifacts:
 
@@ -46,5 +47,6 @@
   - [ ] Cancel Activity dialog
 - [ ] Participants
   - [x] Add participant page
-  - [ ] Remove participant dialog
+  - [ ] Reject participant dialog
   - [ ] Confirm participant dialog
+  - [ ] Cancel participation dialog

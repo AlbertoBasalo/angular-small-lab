@@ -14,6 +14,8 @@ First part of a set of laboratories for applications of different sizes and scop
 
 ### 🧪 E2E Testing ✅
 
+This lab is intended for use as a sample for introductory courses on Angular.
+
 ## 🪴 Laboratory for _medium_ Angular applications
 
 > a new repository coming soon, with all the features of _small_ plus...

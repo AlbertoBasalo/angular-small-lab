@@ -6,10 +6,14 @@ The small lab architecture is a single project that contains all the code for th
 
 ## Patterns and practices
 
-- [x] SURD folder system (Service, UI, Routes, Domain)
-- [x] Container - Presentational pattern for components
-- [x] Subtyped components
+- [x] Standalone apps with CLI
+- [x] Container - Presentational components
+- [x] Lazy routes
+- [x] Reactive forms
 - [x] Root and route services
+- [x] Http subscriptions
+- [x] Subject services
+- [x] Security
 
 ## Main folder structure
 

@@ -9,6 +9,8 @@ export class InstrumentationService {
   notifications$ = new Subject<Notification>();
   responses$ = new Subject<UserResponse>();
 
+  // ToDo: move console logs to a logger service subscribed to notifications$
+
   notifyError(error: unknown, title = 'Error') {
     this.notification = {
       category: 'error',
@@ -101,5 +103,6 @@ function toErrorWithMessage(maybeError: unknown): ErrorWithMessage {
 }
 
 function getErrorMessage(error: unknown) {
-  return toErrorWithMessage(error).message;
+  const errorWithMessage = toErrorWithMessage(error);
+  return errorWithMessage.message;
 }

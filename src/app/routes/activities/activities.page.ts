@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { UserTokenService } from '@service/user-token.service';
 import { Activity } from './domain/activity.interface';
 import { ActivitiesService } from './service/activities.service';
 import { ActivitiesList } from './ui/activities.list';
@@ -15,12 +16,14 @@ import { ActivitiesList } from './ui/activities.list';
         </ul>
       </nav>
     </header>
-    <lab-activities-list [activities]="activities"> </lab-activities-list>
+    <lab-activities-list [activities]="activities" [currentUserId]="currentUserId"/>
   `,
 })
 export default class ActivitiesPage implements OnInit {
   activitiesService = inject(ActivitiesService);
   activities: Activity[] = [];
+  userTokenService = inject(UserTokenService);
+  currentUserId = this.userTokenService.getUserId();
   ngOnInit() {
     this.activitiesService.getActivities$().subscribe((activities) => {
       this.activities = activities;

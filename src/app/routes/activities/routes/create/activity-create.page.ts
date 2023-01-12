@@ -7,7 +7,7 @@ import { ActivityForm } from './activity.form';
 @Component({
   standalone: true,
   imports: [ActivityForm],
-  template: `<lab-activity-form (save)="onSave($event)"></lab-activity-form>`,
+  template: `<lab-activity-form (save)="onSave($event)"/>`,
   styles: [],
 })
 export default class ActivityCreatePage {

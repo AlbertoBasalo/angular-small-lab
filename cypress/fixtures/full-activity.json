@@ -8,5 +8,7 @@
   "maxParticipants": 4,
   "price": 200,
   "slug": "balloon-in-cappadocia",
-  "title": "Balloon in Cappadocia"
+  "status": "published",
+  "title": "Balloon in Cappadocia",
+  "userId": 1
 }

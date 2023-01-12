@@ -8,8 +8,14 @@ import { InstrumentationService } from '@service/instrumentation.service';
 export class ErrorHandlerService implements ErrorHandler {
   instrumentationService = inject(InstrumentationService);
   handleError(error: any): void {
+    console.log('error', { error });
+    console.log({ error });
     if (error instanceof HttpErrorResponse) {
       this.instrumentationService.notifyHttpWarning(error);
-    } else this.instrumentationService.notifyError(error);
+    } else {
+      // ToDo: check better and notify to a logger
+      console.log('error', (error as any)['stack']);
+      this.instrumentationService.notifyError(error);
+    }
   }
 }

@@ -23,11 +23,12 @@ export class UserTokenService {
   }
   redirectToHome() {
     this.router.navigate(['/']);
-    window.location.reload();
+    // window.location.reload();
   }
+  // ToDo: use a subject to notify the components
   redirectToLogin() {
     this.router.navigate(['/auth/login']);
-    window.location.reload();
+    // window.location.reload();
   }
 
   getUserToken() {

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -6,7 +6,12 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Activity } from '../../domain/activity.interface';
+import {
+  Activity,
+  ActivityStatus,
+  AgeCategory,
+  EMPTY_ACTIVITY,
+} from '../../domain/activity.interface';
 
 @Component({
   selector: 'lab-activity-form',
@@ -47,7 +52,7 @@ import { Activity } from '../../domain/activity.interface';
       <input
         id="price"
         name="price"
-        type="number"
+        type="currency"
         formControlName="price"
         placeholder="Location"
         [attr.aria-invalid]="hasError('location')"
@@ -71,22 +76,53 @@ import { Activity } from '../../domain/activity.interface';
         <option value="kids">Just for Kids</option>
       </select>
 
+      <label for="published">
+        <input
+          type="radio"
+          name="status"
+          formControlName="status"
+          id="published"
+          value="published"
+        />
+        Published
+      </label>
+      <label for="cancelled">
+        <input
+          type="radio"
+          name="status"
+          formControlName="status"
+          id="cancelled"
+          value="cancelled"
+        />
+        Cancelled
+      </label>
+
       <button
         id="submit"
         [disabled]="form.invalid"
         (click)="save.emit(form.value)"
       >
-        Save
+        Save activity
       </button>
     </form>
   `,
   styles: [],
 })
 export class ActivityForm {
+  private _activity: Activity = EMPTY_ACTIVITY;
+  public get activity(): Activity {
+    return this._activity;
+  }
+  @Input()
+  public set activity(value: Activity) {
+    this._activity = value;
+    this.form.patchValue(value);
+    this.form.controls['title'].disable();
+  }
   @Output() save = new EventEmitter<Activity>();
 
   form: FormGroup = inject(FormBuilder).group({
-    title: new FormControl<string>('', {
+    title: new FormControl<string>(this.activity.title, {
       validators: [
         Validators.required,
         Validators.minLength(5),
@@ -94,7 +130,7 @@ export class ActivityForm {
       ],
       nonNullable: true,
     }),
-    description: new FormControl<string>('', {
+    description: new FormControl<string>(this.activity.description, {
       validators: [
         Validators.required,
         Validators.minLength(10),
@@ -102,11 +138,11 @@ export class ActivityForm {
       ],
       nonNullable: true,
     }),
-    date: new FormControl<Date>(new Date(), {
+    date: new FormControl<Date>(this.activity.date, {
       validators: [Validators.required],
       nonNullable: true,
     }),
-    location: new FormControl<string>('', {
+    location: new FormControl<string>(this.activity.location, {
       validators: [
         Validators.required,
         Validators.minLength(5),
@@ -114,13 +150,16 @@ export class ActivityForm {
       ],
       nonNullable: true,
     }),
-    maxParticipants: new FormControl<number>(10, {
+    maxParticipants: new FormControl<number>(this.activity.maxParticipants, {
       nonNullable: true,
     }),
-    ageCategory: new FormControl<string>('family', {
+    ageCategory: new FormControl<AgeCategory>(this.activity.ageCategory, {
       nonNullable: true,
     }),
-    price: new FormControl<number>(0, {
+    price: new FormControl<number>(this.activity.price, {
+      nonNullable: true,
+    }),
+    status: new FormControl<ActivityStatus>(this.activity.status, {
       nonNullable: true,
     }),
   });

@@ -29,4 +29,8 @@ export class ActivitiesService {
       `slug=${slug}`
     );
   }
+  update$(activity: Activity) {
+    console.log('update$', activity);
+    return this.apiService.put$<Activity>('activities', activity.id!, activity);
+  }
 }

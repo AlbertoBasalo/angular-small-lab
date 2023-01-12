@@ -9,6 +9,7 @@
     "maxParticipants": 10,
     "price": 100,
     "slug": "grand-canyon-rafting",
+    "status": "published",
     "title": "Grand canyon rafting",
     "userId": 1
   },
@@ -17,11 +18,12 @@
     "currentParticipants": 0,
     "date": "2025-03-01",
     "description": "## Explore the Cumbre Vieja **Volcano**\r\n Experience the **force** of this _natural beast_.",
-    "id": 1,
+    "id": 2,
     "location": "Cumbre Vieja",
     "maxParticipants": 30,
     "price": 20,
     "slug": "cumbre-vieja-exploration",
+    "status": "published",
     "title": "Cumbre Vieja exploration",
     "userId": 1
   }

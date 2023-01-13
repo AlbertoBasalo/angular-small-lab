@@ -66,29 +66,29 @@
   "contacts": [],
   "participants": [
     {
-      "activityId": 1,
-      "userId": 2,
-      "name": "Jeff Gates",
-      "email": "jeff@acme.com",
-      "phone": "555123456",
-      "address": "No way",
-      "paymentMethod": "Visa",
       "acceptConditions": true,
-      "id": 1
+      "activityId": 1,
+      "address": "No way 666",
+      "email": "jeff@acme.com",
+      "id": 1,
+      "name": "Jeff Gates",
+      "paymentMethod": "Visa",
+      "phone": "+1 (415) 555-5555",
+      "userId": 2
     }
   ],
   "users": [
     {
       "email": "richard@action.org",
-      "password": "$2a$10$qgO/y3C3NS38PvH4SxcbNOdT6K5IVNnAg/qcQZfcpZEy.42S1x3d6",
+      "id": 1,
       "name": "Richard Musk",
-      "id": 1
+      "password": "$2a$10$qgO/y3C3NS38PvH4SxcbNOdT6K5IVNnAg/qcQZfcpZEy.42S1x3d6"
     },
     {
       "email": "jeff@acme.com",
-      "password": "$2a$10$lCtDeV5VWpL4nmqwFiY8n.VRtUH4Tkm4I1kAPcUxyP21HXdNTLtDa",
+      "id": 2,
       "name": "Jeff Gates",
-      "id": 2
+      "password": "$2a$10$lCtDeV5VWpL4nmqwFiY8n.VRtUH4Tkm4I1kAPcUxyP21HXdNTLtDa"
     }
   ]
 }

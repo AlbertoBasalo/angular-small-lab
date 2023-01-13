@@ -1,8 +1,8 @@
 {
   "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJpbGxAbXVzay5tZXRhIiwiaWF0IjoxNjczNTIzNTgzLCJleHAiOjE2NzM1MjcxODMsInN1YiI6IjEifQ.qlOzjdQ2FZ-8cH9Umr2Yji4a6NTTIbDavY49tASDERo",
   "user": {
-    "email": "bill@musk.meta",
+    "email": "larry@gcloud.com",
     "id": 1,
-    "name": "Bill Musk"
+    "name": "Larry Jobs"
   }
 }

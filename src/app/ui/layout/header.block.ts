@@ -1,5 +1,5 @@
 import { JsonPipe, NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { UserToken } from '@domain/user-token.interface';
 import { UserTokenService } from '@service/user-token.service';
@@ -41,8 +41,13 @@ import { UserTokenService } from '@service/user-token.service';
     </header>
   `,
 })
-export class HeaderBlock {
+export class HeaderBlock implements OnInit {
   userTokenService = inject(UserTokenService);
   title = '🅰️ 🌱 🧫 angular-small-lab';
   userToken: UserToken = this.userTokenService.getUserToken();
+  ngOnInit(): void {
+    this.userTokenService.userToken$.subscribe((userToken) => {
+      this.userToken = userToken;
+    });
+  }
 }

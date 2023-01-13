@@ -49,6 +49,7 @@ declare namespace Cypress {
 }
 
 function register(): void {
+  // ! This is not a real token, just a fake one for testing purposes.
   cy.fixture('register-user-response').then((userToken) => {
     window.localStorage.setItem('userToken', JSON.stringify(userToken));
   });

@@ -38,6 +38,6 @@ function redirectOnAuthError(
 ) {
   if (error instanceof HttpErrorResponse && error.status === 401) {
     instrumentationService.notifyError(error);
-    userTokenService.redirectToLogin();
+    userTokenService.removeUserToken();
   }
 }

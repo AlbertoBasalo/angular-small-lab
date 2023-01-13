@@ -29,13 +29,7 @@ import { Author } from './author.interface';
           <li><lab-link [href]="author.github" caption="GitHub"></lab-link></li>
         </ul>
       </main>
-      <footer>
-        <p>To log in use :</p>
-        <pre>
-          <p>Email: bill (at) musk (dot) meta</p>
-          <p>Password: 1234</p>
-        </pre>
-      </footer>
+      <footer></footer>
     </article>
   `,
   styles: [],

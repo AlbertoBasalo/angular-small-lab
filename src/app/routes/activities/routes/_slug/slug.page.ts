@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Participant } from '@routes/activities/routes/_slug/domain/participant.interface';
@@ -17,6 +18,7 @@ import { ActivityView } from './ui/activity.view';
 @Component({
   standalone: true,
   imports: [
+    NgIf,
     ActivityView,
     ActivityParticipantForm,
     ActivityParticipantCancellationForm,
@@ -24,15 +26,9 @@ import { ActivityView } from './ui/activity.view';
   ],
   template: `
     <lab-activity-view [activity]="activity"/>
-    <!-- if owner view participants -->
-    {{isOwner}}
-    <lab-activity-participants-list [participants]="participants"/>
-    <!-- if participant allow to cancel participation-->
-    {{isParticipant}}
-    <lab-activity-participant-cancellation-form (cancelParticipant)="onCancelParticipant()"/>
-    <!-- if normal user allow to add as participant -->
-    {{isVisitor}}
-    <lab-activity-participant-form (addParticipant)="onAddParticipant($event)"/>
+    <lab-activity-participants-list *ngIf="isOwner" [participants]="participants"/>
+    <lab-activity-participant-cancellation-form *ngIf="isParticipant" (cancelParticipant)="onCancelParticipant()"/>
+    <lab-activity-participant-form *ngIf="isVisitor" (addParticipant)="onAddParticipant($event)"/>
 
   `,
   styles: [],

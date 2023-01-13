@@ -2,7 +2,7 @@
   "activities": [
     {
       "ageCategory": "adult",
-      "currentParticipants": 0,
+      "currentParticipants": 1,
       "date": "2025-01-01",
       "description": "## Rafting at the Grand Canyon\r\n Experience the **adrenaline** in this _natural wonder_.",
       "id": 1,
@@ -64,13 +64,31 @@
     "www": "https://www.albertobasalo.dev"
   },
   "contacts": [],
-  "participants": [],
+  "participants": [
+    {
+      "activityId": 1,
+      "userId": 2,
+      "name": "Jeff Gates",
+      "email": "jeff@acme.com",
+      "phone": "555123456",
+      "address": "No way",
+      "paymentMethod": "Visa",
+      "acceptConditions": true,
+      "id": 1
+    }
+  ],
   "users": [
     {
-      "email": "bill@musk.meta",
-      "id": 1,
-      "name": "Bill Musk",
-      "password": "$2a$10$Pp00lMmvIHbGRe018SXAOuRi7svaq1bs3qZN.8o6CuWjRHUv3anC6"
+      "email": "richard@action.org",
+      "password": "$2a$10$qgO/y3C3NS38PvH4SxcbNOdT6K5IVNnAg/qcQZfcpZEy.42S1x3d6",
+      "name": "Richard Musk",
+      "id": 1
+    },
+    {
+      "email": "jeff@acme.com",
+      "password": "$2a$10$lCtDeV5VWpL4nmqwFiY8n.VRtUH4Tkm4I1kAPcUxyP21HXdNTLtDa",
+      "name": "Jeff Gates",
+      "id": 2
     }
   ]
 }

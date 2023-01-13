@@ -28,6 +28,10 @@ export class ApiService {
   put$<T>(resource: string, id: string | number, payload: Partial<T>) {
     return this.http.put<T>(this.createUrl({ resource, id }), payload);
   }
+
+  delete$<T>(resource: string, id: string | number = '') {
+    return this.http.delete<T>(this.createUrl({ resource, id }));
+  }
   private createUrl(urlParts: UrlParts): string {
     const resourceUrl = `${this.apiUrl}/${urlParts.resource}`;
     if (urlParts.id) {

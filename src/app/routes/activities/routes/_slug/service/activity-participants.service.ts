@@ -31,4 +31,27 @@ export class ActivityParticipantsService {
           .subscribe();
       });
   }
+
+  cancelParticipant(activity: Activity) {
+    if (activity.id === undefined) throw new Error('activity.id is undefined');
+    const activityId = activity.id;
+    const userId = this.userTokenService.getUserId();
+    if (userId === 0) throw new Error('userId is undefined');
+    this.apiService
+      .delete$<Participant>('participants', activityId)
+      .subscribe(() => {
+        activity.currentParticipants = activity.currentParticipants - 1;
+        this.apiService
+          .put$<Activity>('activities', activityId, activity)
+          .subscribe();
+      });
+  }
+
+  getByActivityId$(activityId: number | undefined) {
+    if (activityId === undefined) throw new Error('activity.id is undefined');
+    return this.apiService.getByQuery$<Participant[]>(
+      'participants',
+      'activityId=' + activityId
+    );
+  }
 }

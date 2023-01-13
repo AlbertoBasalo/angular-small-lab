@@ -16,10 +16,11 @@
 - [x] Add activity
 - [x] Add participant to activity
 - [x] Edit activity
-- [ ] View activity participants
+- [x] View activity participants
 - [x] Cancel activity
 - [x] View my activities
-- [ ] Cancel participation from activity
+- [x] Cancel participation from activity
+- [x] Edit my profile logout
 
 ## Artifacts:
 
@@ -44,8 +45,8 @@
   - [x] Activities page
   - [x] Create Activity page
   - [x] Edit Activity page
-  - [x] View Activity page
+  - [x] View Activity page (with participants...)
   - [x] Cancel Activity dialog
-- [ ] Participants
+- [x] Participants
   - [x] Add participant on Activity page
-  - [ ] Cancel participation dialog
+  - [x] Cancel participation dialog

@@ -25,7 +25,7 @@ import { UserTokenService } from '@service/user-token.service';
               <a routerLink="/activities">🚞 Activities</a>
             </li>
             <li>
-              <span name="userName">🖖🏼 Hi {{ userToken.user.name }}</span>
+              <a routerLink="/auth/profile">👤 {{ userToken.user.name }}</a>
             </li>
           </ng-container>
           <ng-template #noUser>

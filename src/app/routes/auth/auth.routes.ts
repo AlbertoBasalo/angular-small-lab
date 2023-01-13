@@ -16,6 +16,10 @@ export const AUTH_ROUTES: Route[] = [
         path: 'register',
         loadComponent: () => import('./routes/register/register.page'),
       },
+      {
+        path: 'profile',
+        loadComponent: () => import('./routes/profile/profile.page'),
+      },
       { path: '**', redirectTo: 'login' },
     ],
   },

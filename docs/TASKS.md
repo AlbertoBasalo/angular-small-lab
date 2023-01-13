@@ -15,9 +15,9 @@
 
 - [x] Add activity
 - [x] Add participant to activity
-- [ ] Edit activity
+- [x] Edit activity
 - [ ] Confirm/reject participant to activity
-- [ ] Cancel activity
+- [x] Cancel activity
 - [ ] Cancel participation from activity
 
 ## Artifacts:
@@ -39,12 +39,12 @@
   - [x] Notifications dispatcher
   - [x] Error handling
   - [x] Notifications dialog
-- [ ] Activities
+- [x] Activities
   - [x] Activities page
   - [x] Create Activity page
-  - [ ] Edit Activity page
+  - [x] Edit Activity page
   - [x] View Activity page
-  - [ ] Cancel Activity dialog
+  - [x] Cancel Activity dialog
 - [ ] Participants
   - [x] Add participant page
   - [ ] Reject participant dialog

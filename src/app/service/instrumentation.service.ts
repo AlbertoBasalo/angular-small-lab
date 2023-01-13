@@ -7,7 +7,6 @@ import { Subject } from 'rxjs';
 export class InstrumentationService {
   notification: Notification = { category: 'info', title: '', message: '' };
   notifications$ = new Subject<Notification>();
-  responses$ = new Subject<UserResponse>();
 
   // ToDo: move console logs to a logger service subscribed to notifications$
 
@@ -61,19 +60,17 @@ export class InstrumentationService {
     console.debug(this.notification);
   }
 
-  notifyQuestion(message: string, title = 'Question') {
+  notifyQuestion$(message: string, title = 'Question') {
+    const response$ = new Subject<UserResponse>();
     this.notification = {
       category: 'question',
       title,
       message,
+      response$,
     };
     this.notifications$.next(this.notification);
     console.log(this.notification);
-  }
-
-  notifyUserResponse(response: UserResponse) {
-    this.responses$.next(response);
-    console.log(response);
+    return response$.asObservable();
   }
 }
 

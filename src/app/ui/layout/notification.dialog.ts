@@ -27,10 +27,10 @@ import { InstrumentationService } from '@service/instrumentation.service';
             role="button"
             class="secondary"
             (click)="close('cancel')"
-            >Cancel</span
+            >No, forget it</span
           >
           <span *ngIf="showConfirm" role="button" (click)="close('confirm')"
-            >Confirm</span
+            >Yes, do it!</span
           >
         </footer>
       </article>
@@ -65,7 +65,6 @@ export class NotificationDialog {
 
   close(userResponse?: UserResponse) {
     this.isOpen = false;
-    if (userResponse)
-      this.instrumentationService.notifyUserResponse(userResponse);
+    if (userResponse) this.notification?.response$?.next(userResponse);
   }
 }

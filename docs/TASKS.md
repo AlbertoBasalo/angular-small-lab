@@ -36,7 +36,7 @@
   - [x] User Token service and storage
   - [x] Login page
   - [x] Register page
-  - [ ] Profile page
+  - [x] Profile page
 - [x] Instrumentation
   - [x] Notifications dispatcher
   - [x] Error handling

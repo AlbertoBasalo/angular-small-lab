@@ -5,11 +5,24 @@ import { UserTokenService } from '@service/user-token.service';
 @Component({
   standalone: true,
   imports: [CommonModule],
-  template: ` <button (click)="onLogout()">Logout</button> `,
+  template: `
+    <article>
+      <header>
+        <span>{{ userToken.user.name }}</span>
+      </header>
+      <main>
+        <span>📧 {{ userToken.user.email }}</span>
+      </main>
+      <footer>
+        <button (click)="onLogout()">Logout</button>
+      </footer>
+    </article>
+  `,
   styles: [],
 })
 export default class ProfilePage {
   userTokenService = inject(UserTokenService);
+  userToken = this.userTokenService.getUserToken();
   onLogout() {
     this.userTokenService.removeUserToken();
   }

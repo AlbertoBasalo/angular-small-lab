@@ -16,8 +16,9 @@
 - [x] Add activity
 - [x] Add participant to activity
 - [x] Edit activity
-- [ ] Confirm/reject participant to activity
+- [ ] View activity participants
 - [x] Cancel activity
+- [x] View my activities
 - [ ] Cancel participation from activity
 
 ## Artifacts:
@@ -46,7 +47,5 @@
   - [x] View Activity page
   - [x] Cancel Activity dialog
 - [ ] Participants
-  - [x] Add participant page
-  - [ ] Reject participant dialog
-  - [ ] Confirm participant dialog
+  - [x] Add participant on Activity page
   - [ ] Cancel participation dialog

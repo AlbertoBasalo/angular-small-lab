@@ -9,13 +9,16 @@ import { ActivitiesService } from '../../service/activities.service';
 import { ActivityParticipantForm } from './ui/activity-participant.form';
 import { ActivityView } from './ui/activity.view';
 
-// * 6️⃣ Complex Example of a Component error handling
+// * 6️⃣ Complex Example of a Page with several Components and error handling
 
 @Component({
   standalone: true,
   imports: [ActivityView, ActivityParticipantForm],
   template: `
     <lab-activity-view [activity]="activity"></lab-activity-view>
+    <!-- if owner view participants -->
+    <!-- if participant allow to cancel participation-->
+    <!-- if normal user allow to add as participant -->
     <lab-activity-participant-form (addParticipant)="onAddParticipant($event)">
     </lab-activity-participant-form>
   `,

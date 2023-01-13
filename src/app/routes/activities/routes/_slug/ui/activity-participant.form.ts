@@ -14,7 +14,9 @@ import { Participant } from '@routes/activities/routes/_slug/domain/participant.
   imports: [ReactiveFormsModule],
   template: `
     <form [formGroup]="form">
+      <legend><strong>Come on, apply to this activity!</strong></legend>
       <fieldset>
+        <label for="name">Name</label>
         <input
           type="text"
           name="name"
@@ -22,42 +24,52 @@ import { Participant } from '@routes/activities/routes/_slug/domain/participant.
           formControlName="name"
         />
         <div class="grid">
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            formControlName="email"
-          />
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone"
-            formControlName="phone"
-          />
+          <div>
+            <label for="email">Email address</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              formControlName="email"
+            />
+          </div>
+          <div>
+            <label for="phone">Phone number</label>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone"
+              formControlName="phone"
+            />
+          </div>
         </div>
+        <label for="address">Complete address</label>
         <input
           type="text"
           name="address"
           placeholder="Address"
           formControlName="address"
         />
+        <label for="paymentMethod">Select your preferred payment method</label>
         <input
           type="text"
           name="paymentMethod"
           placeholder="Payment Method"
           formControlName="paymentMethod"
         />
-        <input
-          id="acceptConditions"
-          type="checkbox"
-          formControlName="acceptConditions"
-        />
-        <label for="acceptConditions">Accept Conditions</label>
+        <div>
+          <input
+            id="acceptConditions"
+            type="checkbox"
+            formControlName="acceptConditions"
+          />
+          <label for="acceptConditions">Accept Conditions</label>
+        </div>
       </fieldset>
 
       <input
         type="button"
-        value="Add Participant"
+        value="I want ot participate!"
         [disabled]="form.invalid"
         (click)="onAddParticipantClick()"
       />

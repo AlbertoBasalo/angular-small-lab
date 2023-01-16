@@ -1,7 +1,10 @@
 {
   "activities": 664,
+  "activityStatuses": 444,
+  "ageCategories": 444,
   "author": 444,
   "contacts": 666,
   "participants": 644,
+  "paymentMethods": 444,
   "users": 600
 }

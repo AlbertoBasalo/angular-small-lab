@@ -57,6 +57,35 @@
       "userId": 1
     }
   ],
+  "activityStatuses": [
+    {
+      "caption": "Published",
+      "icon": "📢",
+      "id": "published"
+    },
+    {
+      "caption": "Cancelled",
+      "icon": "🚫",
+      "id": "cancelled"
+    }
+  ],
+  "ageCategories": [
+    {
+      "caption": "Adult",
+      "icon": "👨🏼‍🦰",
+      "id": "adult"
+    },
+    {
+      "caption": "Child",
+      "icon": "👦🏼",
+      "id": "child"
+    },
+    {
+      "caption": "Family",
+      "icon": "👨‍👩‍👧‍👦",
+      "id": "family"
+    }
+  ],
   "author": {
     "github": "https://github.com/albertobasalo",
     "linkedIn": "https://www.linkedin.com/in/albertobasalo/",
@@ -87,6 +116,23 @@
       "paymentMethod": "cash",
       "phone": "555123456",
       "userId": 3
+    }
+  ],
+  "paymentMethods": [
+    {
+      "caption": "Cash",
+      "icon": "💵",
+      "id": "cash"
+    },
+    {
+      "caption": "Card",
+      "icon": "💳",
+      "id": "card"
+    },
+    {
+      "caption": "Transfer",
+      "icon": "🏦",
+      "id": "transfer"
     }
   ],
   "users": [

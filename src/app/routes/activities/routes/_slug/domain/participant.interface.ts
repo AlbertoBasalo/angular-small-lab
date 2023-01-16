@@ -6,6 +6,8 @@ export interface Participant {
   email: string;
   phone: string;
   address: string;
-  paymentMethod: string;
+  paymentMethod: PaymentMethod;
   acceptConditions: boolean;
 }
+
+export type PaymentMethod = 'cash' | 'card' | 'transfer';

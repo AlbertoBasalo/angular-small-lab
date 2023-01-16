@@ -44,6 +44,7 @@
     },
     {
       "ageCategory": "family",
+      "currentParticipants": null,
       "date": "2023-11-09",
       "description": "Want you to paddleboard on **Switzerland**?\n With a surface of almost _114 square kilometers_, Lake Lucerne is a popular destination for stand-up paddlers.",
       "id": 667,
@@ -72,9 +73,20 @@
       "email": "jeff@acme.com",
       "id": 1,
       "name": "Jeff Gates",
-      "paymentMethod": "Visa",
+      "paymentMethod": "card",
       "phone": "+1 (415) 555-5555",
       "userId": 2
+    },
+    {
+      "acceptConditions": true,
+      "activityId": 667,
+      "address": "My home 1",
+      "email": "mark@page.me",
+      "id": 2,
+      "name": "Mark Page",
+      "paymentMethod": "cash",
+      "phone": "555123456",
+      "userId": 3
     }
   ],
   "users": [
@@ -89,6 +101,12 @@
       "id": 2,
       "name": "Jeff Gates",
       "password": "$2a$10$lCtDeV5VWpL4nmqwFiY8n.VRtUH4Tkm4I1kAPcUxyP21HXdNTLtDa"
+    },
+    {
+      "email": "mark@page.me",
+      "id": 3,
+      "name": "Mark Page",
+      "password": "$2a$10$C.pMT8gtyt5kSiGzv7y7w.QvHJMgz6RC9ggjYRKFHFjdU5AykLFpO"
     }
   ]
 }

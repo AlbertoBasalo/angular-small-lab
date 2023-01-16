@@ -6,7 +6,10 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Participant } from '@routes/activities/routes/_slug/domain/participant.interface';
+import {
+  Participant,
+  PaymentMethod,
+} from '@routes/activities/routes/_slug/domain/participant.interface';
 
 @Component({
   selector: 'lab-activity-participant-form',
@@ -50,6 +53,7 @@ import { Participant } from '@routes/activities/routes/_slug/domain/participant.
           placeholder="Address"
           formControlName="address"
         />
+        <!-- ToDo: Selector for payment methods -->
         <label for="paymentMethod">Select your preferred payment method</label>
         <input
           type="text"
@@ -97,7 +101,7 @@ export class ActivityParticipantForm {
       validators: [Validators.required],
       nonNullable: true,
     }),
-    paymentMethod: new FormControl('', {
+    paymentMethod: new FormControl<PaymentMethod>('card', {
       validators: [Validators.required],
       nonNullable: true,
     }),
